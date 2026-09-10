@@ -10,13 +10,12 @@ This repository exists specifically to publish the Bot's public-facing **Terms o
 
 | Document | Purpose |
 |---|---|
-| **[Terms of Service](terms.html)** | Rules and conditions governing use of the ASM Tournament Bot |
-| **[Privacy Policy](privacy.html)** | Explains what information the Bot may process, why it is processed, how it is stored, and how users can make data-related requests |
+| **[Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)** | Rules and conditions governing use of the ASM Tournament Bot |
+| **[Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)** | Explains what information the Bot may process, why it is processed, how it is stored, and how users can make data-related requests |
 
-### Direct Pages
+### Official Legal Website
 
-- **Terms of Service:** `terms.html`
-- **Privacy Policy:** `privacy.html`
+**[Visit ASM Tournament Bot Legal](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)**
 
 ---
 
@@ -56,7 +55,7 @@ The Privacy Policy explains the categories of information that may be processed 
 - Content submitted through supported Bot features
 - Technical and operational information
 
-The Bot's data practices are described in detail in the **[Privacy Policy](privacy.html)**.
+The Bot's data practices are described in detail in the **[Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)**.
 
 The legal repository itself does **not** contain the Bot's source code, database, credentials, tokens, webhook secrets, or private operational infrastructure.
 
@@ -64,7 +63,7 @@ The legal repository itself does **not** contain the Bot's source code, database
 
 ## ⚖️ Terms of Use
 
-Use of the ASM Tournament Bot is subject to the **[Terms of Service](terms.html)**.
+Use of the ASM Tournament Bot is subject to the **[Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)**.
 
 The Terms address matters including:
 
@@ -104,17 +103,13 @@ Users should also review:
 This repository is intentionally separate from the main ASM Tournament Bot repository.
 
 ### Public Legal Repository
-Contains only the documents necessary for public legal disclosure:
 
-```text
-ASM-Tournament-Bot-Legal/
-├── index.html
-├── terms.html
-├── privacy.html
-└── README.md
-```
+The repository provides the public legal pages required for transparency and external application-policy links.
+
+The legal website is publicly accessible through GitHub Pages, while the main Bot source code remains private.
 
 ### Main Bot Repository
+
 The main Bot source code and private development infrastructure are maintained separately and are **not published through this repository**.
 
 This separation helps keep:
@@ -131,7 +126,7 @@ This separation helps keep:
 
 The legal documents are published through GitHub Pages.
 
-**Legal Site:**
+**Official Legal Website:**
 
 https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/
 
