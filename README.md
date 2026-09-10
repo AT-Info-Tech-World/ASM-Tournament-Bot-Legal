@@ -1,187 +1,258 @@
-# ASM Tournament Bot — Legal
+# ⚓ ASM Tournament Bot — Legal
 
-Official public legal repository for the **ASM Tournament Bot**, operated for the **Apex Syndicate of Malaysia** tournament ecosystem.
+> **Official public legal repository for the ASM Tournament Bot**, operated within the **Apex Syndicate of Malaysia** tournament ecosystem.
 
-This repository exists specifically to publish the Bot's public-facing **Terms of Service** and **Privacy Policy** while keeping the main bot source code and private infrastructure separate.
+[![Legal](https://img.shields.io/badge/Legal-Terms%20%26%20Privacy-5865F2?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)
+[![Terms](https://img.shields.io/badge/Terms-of%20Service-111827?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)
+[![Privacy](https://img.shields.io/badge/Privacy-Policy-111827?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)
+[![GitHub Pages](https://img.shields.io/badge/Website-GitHub%20Pages-24292F?style=for-the-badge&logo=github)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)
+
+**Public legal information • Private application source • GitHub Pages**
 
 ---
 
-## 📜 Legal Documents
+## 🌐 Official Legal Website
 
-| Document | Purpose |
-|---|---|
-| **[Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)** | Rules and conditions governing use of the ASM Tournament Bot |
-| **[Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)** | Explains what information the Bot may process, why it is processed, how it is stored, and how users can make data-related requests |
+### **[Visit ASM Tournament Bot Legal](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)**
 
-### Official Legal Website
+The website is the primary public-facing location for the current legal documents.
 
-**[Visit ASM Tournament Bot Legal](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)**
+| Document | What it covers |
+|:--|:--|
+| 📜 **[Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)** | Rules, conditions, responsibilities, acceptable use, tournament integrity, service limitations, and other terms governing use of the Bot. |
+| 🔐 **[Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)** | Information the Bot may process, purposes of processing, Discord access, storage, third-party services, retention, deletion requests, security, and privacy practices. |
+
+> **Always use the current versions published on the official legal website.** Archived copies or repository history may not reflect the currently applicable documents.
 
 ---
 
 ## 🤖 About ASM Tournament Bot
 
-ASM Tournament Bot is a Discord-based tournament management and server utility system designed for tournament operations within the **Apex Syndicate of Malaysia** ecosystem.
+**ASM Tournament Bot** is a Discord-based tournament management and server utility system built for tournament operations within the **Apex Syndicate of Malaysia** ecosystem.
 
-Depending on the server configuration and enabled features, the Bot may support functionality such as:
+Depending on server configuration, permissions, tournament setup, and enabled features, the Bot may provide:
 
-- Tournament creation and management
-- Team and participant management
-- Match scheduling
-- Match tickets and match-room workflows
-- Attendance tracking
-- Match result and score processing
-- Tournament bracket integration
-- Staff and tournament administration
-- Automated reminders
-- Recurring operational messages
-- Server and moderation utilities
-- Tournament-related announcements
-- Operational logging and administrative records
+- 🏆 Tournament creation and management
+- 👥 Team and participant management
+- 📅 Match scheduling and staff assignments
+- 🎫 Match tickets and match-room workflows
+- 📝 Attendance tracking and operational records
+- ⚔️ Match result and score processing
+- 🥇 Tournament bracket and competition workflows
+- 👮 Staff and tournament administration
+- 🔔 Automated reminders and operational notifications
+- 🔁 Recurring operational messages
+- 📢 Tournament and server announcements
+- 🛠️ Server and moderation utilities
+- 📊 Tournament exports and operational reporting
+- 🔐 Managed operational logging and administrative records
 
-The exact functionality available to a user depends on the Discord server, permissions, tournament configuration, and features enabled by server administrators.
+### Feature availability
+
+The Bot does **not** provide every feature in every server.
+
+Available functionality can depend on:
+
+- Discord server configuration
+- User and Bot permissions
+- Tournament configuration
+- Enabled modules
+- Staff or administrator settings
+- Discord API availability
+- Third-party service availability
 
 ---
 
 ## 🔐 Privacy & Data
 
-The Privacy Policy explains the categories of information that may be processed by the Bot, including information associated with:
+The Bot may process information required to provide its enabled functionality.
 
-- Discord users and identifiers
-- Discord servers and server configuration
-- Tournament participants and teams
-- Attendance and staff records
-- Tournament and match information
-- Content submitted through supported Bot features
-- Technical and operational information
+Depending on the features being used, this may include:
 
-The Bot's data practices are described in detail in the **[Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)**.
+- **Discord identifiers** — user, server, channel, role, message, and related identifiers
+- **Discord profile information** — information made available through Discord APIs
+- **Server information** — guild configuration and operational settings
+- **Tournament information** — tournaments, teams, participants, matches, schedules, and results
+- **Attendance and staff records** — operational records associated with tournament administration
+- **Submitted operational content** — information entered or submitted through supported Bot workflows
+- **Technical information** — information needed to operate, secure, diagnose, and maintain the service
 
-The legal repository itself does **not** contain the Bot's source code, database, credentials, tokens, webhook secrets, or private operational infrastructure.
+The complete data practices are defined in the **[Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)**.
+
+### No public source-code exposure
+
+This repository is intentionally limited to public legal information. It does **not** publish:
+
+- Discord Bot tokens
+- Webhook URLs or webhook tokens
+- Database credentials
+- Private configuration
+- Internal infrastructure
+- Private tournament administration data
+- The Bot's private source-code repository
 
 ---
 
-## ⚖️ Terms of Use
+## ⚖️ Terms & Responsible Use
 
-Use of the ASM Tournament Bot is subject to the **[Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)**.
+Use of ASM Tournament Bot is governed by the **[Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)**.
 
-The Terms address matters including:
+The Terms address areas including:
 
 - Eligibility and authorization
-- Discord's relationship with the Bot
+- Discord's relationship with the service
 - Server administrator authority
-- Tournament integrity
-- Acceptable use
+- Tournament integrity and fair operation
 - User and server content
+- Acceptable use
 - Third-party services
+- Permissions and administrative controls
 - Security and responsible use
+- Service availability and changes
 - Suspension and termination
 - Intellectual property
 - Disclaimers
 - Limitation of liability
-- Changes to the service and legal terms
+- Indemnification
+- Changes to the legal terms
 
-Please read the full Terms before using the Bot.
-
----
-
-## 🌐 Discord
-
-ASM Tournament Bot operates through Discord and is subject to Discord's platform rules and policies.
-
-Nothing in these documents is intended to replace or override Discord's own policies.
-
-Users should also review:
-
-- [Discord Terms of Service](https://discord.com/terms)
-- [Discord Privacy Policy](https://discord.com/privacy)
+For the legally operative wording, refer to the current Terms of Service rather than this README.
 
 ---
 
-## 🏛️ Repository Purpose
+## 🔗 Discord Platform
 
-This repository is intentionally separate from the main ASM Tournament Bot repository.
+ASM Tournament Bot operates through Discord and interacts with Discord's platform and APIs.
 
-### Public Legal Repository
+Use of Discord remains subject to Discord's own policies. These documents govern the Bot's service and do not replace, override, or modify Discord's policies.
 
-The repository provides the public legal pages required for transparency and external application-policy links.
+- **[Discord Terms of Service](https://discord.com/terms)**
+- **[Discord Privacy Policy](https://discord.com/privacy)**
 
-The legal website is publicly accessible through GitHub Pages, while the main Bot source code remains private.
+---
 
-### Main Bot Repository
+## 🏛️ Why This Repository Exists
 
-The main Bot source code and private development infrastructure are maintained separately and are **not published through this repository**.
+The legal repository is intentionally separated from the main Bot project.
 
-This separation helps keep:
+### Public Legal Layer
 
-- Bot source code private
-- Credentials and configuration private
-- Internal infrastructure private
-- Public legal documents accessible
-- Discord application legal links publicly reachable
+This repository provides stable, publicly accessible pages for:
+
+- Terms of Service
+- Privacy Policy
+- Discord application legal requirements
+- Public transparency regarding Bot data practices
+
+### Private Application Layer
+
+The main ASM Tournament Bot project remains private and contains the application's source code and private operational infrastructure.
+
+This separation allows the legal documents to remain publicly reachable without exposing the Bot's private implementation.
+
+```text
+ASM Tournament Bot
+│
+├── 🔒 Private Bot Repository
+│   ├── Source code
+│   ├── Database integration
+│   ├── Private configuration
+│   ├── Credentials / secrets
+│   └── Internal infrastructure
+│
+└── 🌐 Public Legal Repository
+    ├── index.html
+    ├── terms.html
+    └── privacy.html
+```
 
 ---
 
 ## 📄 GitHub Pages
 
-The legal documents are published through GitHub Pages.
+The legal website is published through GitHub Pages.
 
-**Official Legal Website:**
+| Page | URL |
+|:--|:--|
+| 🌐 **Legal Home** | **[Open Website](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)** |
+| 📜 **Terms of Service** | **[Read Terms](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)** |
+| 🔐 **Privacy Policy** | **[Read Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)** |
 
-https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/
-
-**Terms of Service:**
-
-https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html
-
-**Privacy Policy:**
-
-https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html
-
-These pages are intended to provide stable public URLs for use with Discord application and Bot configuration requirements.
+These URLs are intended to provide stable public references for Discord application configuration and other legitimate policy-link requirements.
 
 ---
 
-## 📬 Contact
+## 🛡️ Repository Scope
 
-For questions regarding the ASM Tournament Bot, its Terms of Service, Privacy Policy, data practices, or legal matters:
+This repository is **documentation-only**.
 
-**Please contact the Developer Team.**
+It is not:
 
-Do not include sensitive personal information unless it is necessary for the request.
+- ❌ The Bot's source-code repository
+- ❌ A distribution of the Bot's private infrastructure
+- ❌ A credential store
+- ❌ A database repository
+- ❌ A place for private tournament records
+
+It exists to publish the Bot's **current public legal documentation**.
 
 ---
 
-## 🔄 Changes
+## 📬 Contact the Developer Team
 
-The legal documents may be updated when the Bot's functionality, data practices, operational requirements, or applicable platform requirements change.
+For questions concerning:
 
-When changes are made, the updated documents will be published through this repository and GitHub Pages.
+- ASM Tournament Bot
+- Terms of Service
+- Privacy Policy
+- Data practices
+- Legal matters
+- Privacy or data-related requests
 
-Users are encouraged to review the current versions of the Terms of Service and Privacy Policy rather than relying on archived copies.
+### **Please contact the Developer Team.**
+
+For privacy or data-related requests, avoid including sensitive personal information unless it is necessary to process the request.
+
+---
+
+## 🔄 Document Updates
+
+The legal documents may be updated when there are material changes to:
+
+- Bot functionality
+- Data-processing practices
+- Operational infrastructure
+- Discord platform requirements
+- Applicable legal or policy requirements
+
+When changes are published, the current versions on the GitHub Pages website are the authoritative public versions.
+
+> **Review the live legal pages for the current Terms of Service and Privacy Policy.**
 
 ---
 
 ## ⚠️ Important Notice
 
-This repository is the public legal-information site for the ASM Tournament Bot.
+This README is an informational guide to the purpose and scope of this repository.
 
-It is **not** the Bot's source-code repository and does not provide:
+It is **not a substitute for the Terms of Service or Privacy Policy**.
 
-- Bot credentials
-- Discord tokens
-- Webhook URLs or tokens
-- Database credentials
-- Private configuration
-- Internal infrastructure
-- Private tournament administration data
+For legally operative details, always refer to:
 
-For the legally operative details, always refer to the current **Terms of Service** and **Privacy Policy** published on the official GitHub Pages site.
+**[📜 Terms of Service](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)**  
+**[🔐 Privacy Policy](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)**
 
 ---
 
 ## © Apex Syndicate of Malaysia
 
-ASM Tournament Bot and its associated tournament-management ecosystem are operated within the Apex Syndicate of Malaysia environment.
+ASM Tournament Bot operates within the **Apex Syndicate of Malaysia** tournament ecosystem.
 
-All rights and ownership statements are subject to the terms described in the applicable legal documents.
+All rights, ownership, service limitations, and other legally operative matters are governed by the applicable legal documents published on the official legal website.
+
+---
+
+<p align="center">
+  <strong>⚓ ASM Tournament Bot</strong><br>
+  Official Public Legal Documentation
+</p>
