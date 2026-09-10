@@ -28,6 +28,101 @@
 .button:active,.footer a:active{
   transform:translate3d(0,-1px,0) scale(1.01);
 }
+
+/* =========================================================
+   ASM LEGAL HOME — PREMIUM 3D INTERACTION
+   ========================================================= */
+html{scroll-behavior:smooth}
+body{
+  position:relative;
+  overflow-x:hidden;
+  isolation:isolate;
+  background:
+    radial-gradient(850px 560px at var(--mx,50%) var(--my,10%),rgba(69,105,184,.16),transparent 62%),
+    radial-gradient(circle at 50% -8%,#1c2c51 0,#070b13 43%);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    linear-gradient(120deg,transparent 0 48%,rgba(141,168,255,.025) 50%,transparent 52%),
+    radial-gradient(circle at 80% 80%,rgba(60,92,154,.07),transparent 30%);
+}
+.hero{perspective:1200px}
+.mark{
+  transform-style:preserve-3d;
+  transition:transform .16s ease-out,box-shadow .3s ease,border-color .3s ease;
+}
+.hero h1{
+  text-shadow:0 18px 50px rgba(0,0,0,.48);
+  transition:transform .3s ease;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  transform:perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
+  transition:transform .16s ease-out,box-shadow .28s ease,border-color .28s ease;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+  opacity:0;
+  background:radial-gradient(280px 180px at var(--cx,50%) var(--cy,20%),rgba(141,168,255,.14),transparent 68%);
+  transition:opacity .25s ease;
+}
+.card>*{position:relative;transform:translateZ(18px)}
+.card .icon{transform:translateZ(30px);transition:transform .22s ease}
+.card h2{transform:translateZ(24px);transition:transform .22s ease}
+.button{
+  transform:translateZ(34px);
+  transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease,border-color .2s ease,background .2s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .card:hover{
+    border-color:rgba(141,168,255,.58);
+    box-shadow:0 34px 80px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.055);
+    z-index:8;
+  }
+  .card:hover::before{opacity:1}
+  .card:hover .icon{transform:translateZ(42px) scale(1.08)}
+  .card:hover h2{transform:translateZ(34px) translateX(3px)}
+  .button:hover{
+    transform:translateZ(48px) translateY(-5px) scale(1.06);
+    box-shadow:0 18px 34px rgba(0,0,0,.46);
+    border-color:rgba(141,168,255,.65);
+  }
+}
+.card:focus-visible{
+  outline:2px solid #8da8ff;
+  outline-offset:4px;
+}
+#home-light{
+  position:fixed;
+  left:0;top:0;
+  width:300px;height:300px;
+  margin:-150px 0 0 -150px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:0;
+  opacity:0;
+  background:radial-gradient(circle,rgba(116,148,225,.11),rgba(116,148,225,.03) 30%,transparent 70%);
+}
+@media (hover:hover) and (pointer:fine){
+  body.home-pointer #home-light{opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .card,.mark{transform:none!important}
+  #home-light{display:none}
+}
+@media(max-width:700px){
+  .card{transform:none!important}
+}
 </style>
 </head><body>
 <header class="hero wrap"><div class="mark">⚓</div><div class="eyebrow">Apex Syndicate of Malaysia</div><h1>ASM Tournament Bot</h1><p>Official legal and data-use information for the Discord application supporting tournament operations, match workflows, scheduling, attendance, staff administration and server utilities.</p></header>
@@ -35,4 +130,85 @@
 <article class="card" tabindex="0"><div class="icon">📜</div><h2>Terms of Service</h2><p>Rules, responsibilities, prohibited conduct, service limitations, administrative controls, intellectual-property terms and termination provisions for use of the bot.</p><a class="button" href="terms.html">Read Terms →</a></article>
 <article class="card" tabindex="0"><div class="icon">🔒</div><h2>Privacy Policy</h2><p>Detailed information about Discord data, tournament records, storage, integrations, retention, deletion requests, security and user rights.</p><a class="button" href="privacy.html">Read Privacy Policy →</a></article>
 </section></main><footer class="footer"><div class="wrap">© 2026 Apex Syndicate of Malaysia. All rights reserved. · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></div></footer>
+
+<script>
+(() => {
+  "use strict";
+  if (window.__asmHome3DInitialized) return;
+  window.__asmHome3DInitialized = true;
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const body = document.body;
+  const root = document.documentElement;
+
+  const light = document.createElement("div");
+  light.id = "home-light";
+  light.setAttribute("aria-hidden","true");
+  body.appendChild(light);
+
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const mark = document.querySelector(".mark");
+
+  if (!reduced && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    cards.forEach(card => {
+      card.addEventListener("pointermove", event => {
+        const r = card.getBoundingClientRect();
+        const x = (event.clientX-r.left)/Math.max(1,r.width);
+        const y = (event.clientY-r.top)/Math.max(1,r.height);
+        const ry = ((x-.5)*8).toFixed(2);
+        const rx = ((.5-y)*6).toFixed(2);
+        card.style.setProperty("--rx",rx+"deg");
+        card.style.setProperty("--ry",ry+"deg");
+        card.style.setProperty("--cx",(x*100).toFixed(1)+"%");
+        card.style.setProperty("--cy",(y*100).toFixed(1)+"%");
+        card.style.transform =
+          `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-8px,22px)`;
+      });
+      card.addEventListener("pointerleave",() => {
+        card.style.removeProperty("--rx");
+        card.style.removeProperty("--ry");
+        card.style.removeProperty("--cx");
+        card.style.removeProperty("--cy");
+        card.style.transform="";
+      });
+    });
+
+    if (mark) {
+      mark.addEventListener("pointermove", event => {
+        const r=mark.getBoundingClientRect();
+        const x=(event.clientX-r.left)/Math.max(1,r.width);
+        const y=(event.clientY-r.top)/Math.max(1,r.height);
+        const ry=((x-.5)*12).toFixed(2);
+        const rx=((.5-y)*10).toFixed(2);
+        mark.style.transform=`perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(16px) scale(1.06)`;
+      });
+      mark.addEventListener("pointerleave",()=>{mark.style.transform=""});
+    }
+
+    body.addEventListener("pointermove",event=>{
+      body.classList.add("home-pointer");
+      root.style.setProperty("--mx",event.clientX+"px");
+      root.style.setProperty("--my",event.clientY+"px");
+      light.style.transform=`translate3d(${event.clientX}px,${event.clientY}px,0)`;
+    },{passive:true});
+    body.addEventListener("pointerleave",()=>body.classList.remove("home-pointer"));
+  }
+
+  if (!reduced && "IntersectionObserver" in window) {
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.animate(
+            [{opacity:0,transform:"perspective(1200px) translateY(28px) scale(.97)"},
+             {opacity:1,transform:"perspective(1200px) translateY(0) scale(1)"}],
+            {duration:650,easing:"cubic-bezier(.2,.75,.25,1)",fill:"forwards"}
+          );
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.1});
+    cards.forEach(card=>observer.observe(card));
+  }
+})();
+</script>
 </body></html>
