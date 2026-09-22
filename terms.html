@@ -1,333 +1,476 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1220"><title>Terms of Service — ASM Tournament Bot</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050812">
+<title>Terms of Use | Apex Vanguard™</title>
 <style>
-:root{--bg:#070b13;--text:#edf3ff;--muted:#a8b5c9;--line:#263650;--accent:#8da8ff;--accent2:#cbd7ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -8%,#1c2c51 0,#070b13 43%);color:var(--text);font:16px/1.78 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:var(--accent2)}.wrap{width:min(980px,92%);margin:auto}.top{padding:58px 0 34px;border-bottom:1px solid var(--line)}.brand{color:var(--accent2);font-size:12px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}.top h1{font-size:clamp(36px,6vw,58px);line-height:1.05;margin:13px 0 8px}.updated{color:var(--muted);font-size:14px}.nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.nav a{padding:8px 13px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:#0b1424}.content{padding:42px 0 78px}.notice{background:linear-gradient(135deg,#111e34,#0b1424);border:1px solid #30466c;border-radius:16px;padding:20px 22px;margin-bottom:34px}.toc{background:#0b1321;border:1px solid var(--line);border-radius:16px;padding:22px 25px;margin:28px 0 38px}.toc strong{display:block;margin-bottom:10px}.toc ol{margin:0;padding-left:24px}.toc a{text-decoration:none}.content h2{font-size:27px;line-height:1.25;margin:44px 0 12px}.content h3{font-size:20px;margin:29px 0 8px}.content p,.content li{color:#c3cfdf}.content ul,.content ol{padding-left:26px}.content li{margin:5px 0}.definition{border-left:3px solid #4b6594;padding:11px 17px;background:#0b1320;color:#cbd6e7;margin:16px 0}.footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:14px}.small{font-size:14px;color:var(--muted)}table{width:100%;border-collapse:collapse;margin:18px 0 26px;background:#0b1320;border:1px solid var(--line)}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:#fff;background:#101b2e}td{color:#c3cfdf}@media(max-width:700px){.top{padding-top:40px}.content h2{font-size:24px}th,td{font-size:14px;padding:10px}}
-
-/* Interactive legal-document links */
-.nav a,.toc a,.content a,.footer a{
-  position:relative;
-  display:inline-block;
-  transition:transform .2s cubic-bezier(.2,.8,.2,1),color .2s ease,box-shadow .2s ease;
-  transform-origin:left center;
-  will-change:transform;
-}
-.nav a:hover,.toc a:hover,.content a:hover,.footer a:hover{
-  transform:translate3d(7px,-3px,0) scale(1.045);
-  z-index:10;
-  color:#ffffff;
-  text-shadow:0 5px 22px #000b;
-}
-.nav a:hover{
-  box-shadow:0 10px 25px #0008;
-}
-.toc a:hover{
-  text-shadow:0 5px 18px #0009;
-}
-
-/* =========================================================
-   ASM LEGAL — PREMIUM 3D INTERACTION LAYER
-   ========================================================= */
 :root{
+  --bg:#050812;
+  --panel:#0b1220;
+  --panel2:#101a2d;
+  --text:#f2f6ff;
+  --muted:#aab7cc;
+  --line:rgba(151,176,230,.20);
+  --lineStrong:rgba(151,176,230,.42);
+  --accent:#8faeff;
+  --accent2:#d9e3ff;
+  --shadow:rgba(0,0,0,.58);
   --mx:50%;
-  --my:18%;
-  --depth-border:rgba(141,168,255,.28);
+  --my:15%;
 }
-html{scroll-padding-top:28px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:28px}
 body{
-  position:relative;
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at var(--mx) var(--my),rgba(75,111,195,.17),transparent 64%),
+    radial-gradient(700px 420px at 92% 82%,rgba(48,76,135,.10),transparent 68%),
+    linear-gradient(145deg,#050812,#070c17 48%,#050812);
+  font:16px/1.78 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   overflow-x:hidden;
   isolation:isolate;
-  background:
-    radial-gradient(900px 520px at var(--mx) var(--my),rgba(70,105,180,.14),transparent 62%),
-    radial-gradient(circle at 50% -8%,#1c2c51 0,#070b13 43%);
 }
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:-1;
+  z-index:-3;
   background:
-    linear-gradient(115deg,transparent 0 47%,rgba(141,168,255,.025) 50%,transparent 53%),
-    radial-gradient(circle at 15% 85%,rgba(61,91,150,.06),transparent 28%);
+    linear-gradient(120deg,transparent 0 47%,rgba(171,195,255,.022) 50%,transparent 53%),
+    radial-gradient(circle at 15% 80%,rgba(102,133,199,.06),transparent 28%);
 }
-.top,.content,.footer{position:relative;z-index:1}
-.top{
-  transform-style:preserve-3d;
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:10;
+  opacity:.12;
+  background-image:radial-gradient(rgba(255,255,255,.20) .6px,transparent .6px);
+  background-size:5px 5px;
+  mix-blend-mode:soft-light;
 }
-.brand,.top h1,.updated,.nav{
-  transform:translateZ(0);
-  transition:transform .35s cubic-bezier(.2,.8,.2,1);
-}
-.top h1{
-  text-shadow:0 12px 36px rgba(0,0,0,.42);
-}
-.nav a{
-  transform:translateZ(0);
-  transition:transform .22s cubic-bezier(.2,.8,.2,1),background .22s ease,border-color .22s ease,box-shadow .22s ease;
-}
-@media (hover:hover) and (pointer:fine){
-  .nav a:hover{
-    transform:translate3d(0,-5px,24px) scale(1.055);
-    background:linear-gradient(145deg,#172746,#0c1628);
-    border-color:rgba(141,168,255,.55);
-    box-shadow:0 16px 34px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.05);
-  }
-}
-.notice,.toc,.legal-section{
+a{color:var(--accent2);text-decoration:none}
+a:hover{color:#fff}
+button{font:inherit}
+.wrap{width:min(1080px,92vw);margin:0 auto}
+.hero{
   position:relative;
+  padding:90px 0 70px;
+  text-align:center;
+  perspective:1400px;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--accent2);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.hero h1{
+  margin:17px 0 13px;
+  font-size:clamp(42px,7vw,76px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  text-shadow:0 20px 70px rgba(0,0,0,.62);
+}
+.hero p{
+  max-width:790px;
+  margin:20px auto 0;
+  color:var(--muted);
+  font-size:18px;
+}
+.mark{
+  width:94px;
+  height:94px;
+  margin:0 auto 27px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--lineStrong);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(24,39,70,.96),rgba(7,13,25,.92));
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.60),
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -20px 40px rgba(0,0,0,.18);
   transform-style:preserve-3d;
-  backface-visibility:hidden;
+  font-size:40px;
 }
+.mark::after{
+  content:"";
+  position:absolute;
+  width:125px;
+  height:125px;
+  border-radius:34px;
+  border:1px solid rgba(143,174,255,.10);
+  transform:translateZ(-18px) rotate(10deg);
+}
+.eyebrow{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  padding:0 0 90px;
+  perspective:1400px;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+  min-height:290px;
+  padding:34px;
+  border:1px solid var(--line);
+  border-radius:26px;
+  background:
+    radial-gradient(350px 220px at var(--cx,50%) var(--cy,0%),rgba(143,174,255,.10),transparent 70%),
+    linear-gradient(145deg,rgba(17,29,50,.94),rgba(8,14,26,.94));
+  box-shadow:
+    0 32px 90px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.055),
+    inset 0 -30px 70px rgba(0,0,0,.16);
+  transform-style:preserve-3d;
+  transform:perspective(1400px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
+  transition:transform .16s ease-out,border-color .3s ease,box-shadow .3s ease;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,.055),transparent 20%,transparent 72%,rgba(143,174,255,.035));
+}
+.card:hover{
+  border-color:rgba(143,174,255,.48);
+  box-shadow:
+    0 48px 120px rgba(0,0,0,.58),
+    0 0 50px rgba(92,126,201,.10),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+.card > *{position:relative;z-index:1;transform:translateZ(22px)}
+.icon{font-size:34px;filter:drop-shadow(0 12px 25px rgba(0,0,0,.55))}
+.card h2{margin:12px 0 9px;font-size:28px}
+.card p{color:var(--muted);margin:0 0 19px}
+.button{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 17px;
+  border:1px solid rgba(143,174,255,.30);
+  border-radius:13px;
+  background:linear-gradient(145deg,#172747,#0b1528);
+  color:#f5f8ff;
+  font-weight:850;
+  box-shadow:0 14px 35px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.06);
+  transform:translateZ(35px);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.button:hover{
+  transform:translate3d(0,-6px,45px) scale(1.04);
+  border-color:rgba(143,174,255,.65);
+  box-shadow:0 24px 45px rgba(0,0,0,.50),0 0 30px rgba(104,139,219,.10);
+  color:#fff;
+}
+.footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 50px;
+  color:var(--muted);
+  font-size:14px;
+}
+.footer a{display:inline-block;margin-left:7px}
+.footer a:hover{transform:translateY(-2px)}
+.top{
+  position:relative;
+  padding:58px 0 34px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.top .wrap{position:relative;z-index:2}
+.top h1{
+  margin:13px 0 8px;
+  font-size:clamp(38px,6vw,64px);
+  line-height:1;
+  letter-spacing:-.04em;
+  text-shadow:0 18px 60px rgba(0,0,0,.60);
+}
+.updated{color:var(--muted);font-size:14px}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.nav a{
+  display:inline-block;
+  padding:9px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(10,19,34,.72);
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.nav a:hover{
+  transform:translate3d(0,-5px,20px);
+  border-color:var(--lineStrong);
+  box-shadow:0 20px 40px rgba(0,0,0,.42);
+}
+.content{padding:42px 0 86px}
 .notice,.toc{
-  transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,border-color .32s ease;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px 24px;
+  background:linear-gradient(145deg,rgba(17,30,52,.90),rgba(8,14,26,.90));
+  box-shadow:0 25px 65px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.045);
+  transform:translateZ(0);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
 }
-@media (hover:hover) and (pointer:fine){
-  .notice:hover,.toc:hover{
-    transform:translate3d(0,-6px,18px);
-    border-color:var(--depth-border);
-    box-shadow:0 24px 60px rgba(0,0,0,.38),0 0 0 1px rgba(141,168,255,.04);
-  }
+.notice:hover,.toc:hover{
+  transform:translateY(-6px);
+  border-color:var(--lineStrong);
+  box-shadow:0 35px 85px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
 }
+.toc{margin:26px 0 40px}
+.toc strong{display:block;margin-bottom:10px}
+.toc ol{margin:0;padding-left:25px}
+.toc li{margin:4px 0}
 .legal-section{
-  padding:18px 22px 21px;
-  margin:28px -22px 0;
+  position:relative;
+  margin:24px 0 0;
+  padding:20px 22px 24px;
   border:1px solid transparent;
-  border-radius:18px;
-  transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
-  transition:transform .18s ease-out,background .28s ease,border-color .28s ease,box-shadow .28s ease;
+  border-radius:22px;
+  transform-style:preserve-3d;
+  transition:transform .16s ease-out,background .28s ease,border-color .28s ease,box-shadow .28s ease;
 }
-.legal-section.is-visible{
-  animation:sectionRise .62s cubic-bezier(.2,.75,.25,1) both;
+.legal-section.is-visible{animation:rise .7s cubic-bezier(.2,.78,.22,1) both}
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,28px,-20px)}
+  to{opacity:1;transform:translate3d(0,0,0)}
 }
-@keyframes sectionRise{
-  from{opacity:0;transform:perspective(1100px) translate3d(0,22px,-24px)}
-  to{opacity:1;transform:perspective(1100px) translate3d(0,0,0)}
-}
-@media (hover:hover) and (pointer:fine){
-  .legal-section:hover{
-    background:linear-gradient(145deg,rgba(16,26,43,.68),rgba(7,11,19,.25));
-    border-color:rgba(141,168,255,.16);
-    box-shadow:0 24px 65px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.025);
-    z-index:4;
-  }
-  .legal-section:hover h2{
-    transform:translate3d(5px,-2px,16px);
-  }
+.legal-section:hover{
+  background:linear-gradient(145deg,rgba(17,29,50,.55),rgba(8,14,26,.18));
+  border-color:rgba(143,174,255,.16);
+  box-shadow:0 28px 75px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.025);
 }
 .content h2{
-  position:relative;
-  transition:transform .22s cubic-bezier(.2,.8,.2,1),text-shadow .22s ease;
+  margin:0 0 13px;
+  font-size:28px;
+  line-height:1.25;
+  transition:transform .22s ease,text-shadow .22s ease;
+}
+.legal-section:hover h2{
+  transform:translate3d(5px,-2px,14px);
+  text-shadow:0 12px 30px rgba(0,0,0,.45);
 }
 .content h2::after{
   content:"";
   display:block;
   width:0;
   height:2px;
-  margin-top:8px;
+  margin-top:10px;
   border-radius:999px;
   background:linear-gradient(90deg,var(--accent),transparent);
   transition:width .35s ease;
 }
-.legal-section:hover h2::after{width:min(180px,42%)}
-.content a{
-  transition:transform .2s cubic-bezier(.2,.8,.2,1),color .2s ease,text-shadow .2s ease;
-}
-.toc a{
-  transform-origin:left center;
-}
-@media (hover:hover) and (pointer:fine){
-  .content a:hover{
-    transform:translate3d(6px,-3px,20px) scale(1.035);
-    color:#fff;
-    text-shadow:0 8px 24px rgba(0,0,0,.65);
-  }
+.legal-section:hover h2::after{width:min(190px,42%)}
+.content h3{font-size:20px;margin:27px 0 8px}
+.content p,.content li{color:#c7d2e3}
+.content ul,.content ol{padding-left:27px}
+.content li{margin:5px 0}
+.definition{
+  margin:15px 0;
+  padding:13px 17px;
+  border-left:3px solid #526ea4;
+  border-radius:0 13px 13px 0;
+  background:rgba(7,13,24,.72);
+  color:#d2dced;
 }
 table{
-  transform-style:preserve-3d;
-  box-shadow:0 14px 35px rgba(0,0,0,.18);
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  overflow:hidden;
+  margin:20px 0 28px;
+  background:rgba(7,13,24,.76);
+  border:1px solid var(--line);
+  border-radius:17px;
+  box-shadow:0 22px 55px rgba(0,0,0,.28);
 }
-tbody tr{
-  transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
-}
-@media (hover:hover) and (pointer:fine){
-  tbody tr:hover{
-    transform:translate3d(5px,-2px,10px);
-    background:rgba(28,44,72,.34);
-    box-shadow:8px 0 26px rgba(0,0,0,.2);
-  }
-}
-.footer a{display:inline-block}
-#scroll-progress{
+th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:#fff;background:#101b30}
+td{color:#c5d1e2}
+tbody tr{transition:transform .18s ease,background .18s ease}
+tbody tr:hover{transform:translateX(5px);background:rgba(29,46,77,.34)}
+.small{font-size:14px;color:var(--muted)}
+#progress{
   position:fixed;
   top:0;left:0;
   width:0;height:3px;
   z-index:9999;
-  background:linear-gradient(90deg,#6f8fe8,#cbd7ff);
-  box-shadow:0 0 18px rgba(141,168,255,.55);
-  pointer-events:none;
+  background:linear-gradient(90deg,#6f8fe8,#d9e3ff);
+  box-shadow:0 0 20px rgba(143,174,255,.62);
 }
-#back-top{
+#cursorLight{
+  position:fixed;
+  left:0;top:0;
+  width:310px;height:310px;
+  margin:-155px 0 0 -155px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:0;
+  opacity:0;
+  background:radial-gradient(circle,rgba(122,155,231,.11),rgba(122,155,231,.035) 30%,transparent 70%);
+}
+body.pointer #cursorLight{opacity:1}
+#backTop{
   position:fixed;
   right:22px;
   bottom:22px;
-  width:46px;height:46px;
-  border:1px solid rgba(141,168,255,.28);
-  border-radius:14px;
-  background:rgba(11,20,36,.86);
-  color:#edf3ff;
+  width:48px;height:48px;
+  border:1px solid var(--lineStrong);
+  border-radius:15px;
+  background:rgba(8,15,28,.86);
+  color:#fff;
   cursor:pointer;
   opacity:0;
   visibility:hidden;
   transform:translateY(12px) scale(.92);
   transition:opacity .25s ease,visibility .25s ease,transform .25s ease,box-shadow .25s ease;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
+  z-index:20;
 }
-#back-top.visible{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0) scale(1);
-}
-@media (hover:hover) and (pointer:fine){
-  #back-top:hover{
-    transform:translateY(-5px) scale(1.06);
-    box-shadow:0 14px 32px rgba(0,0,0,.45);
-    border-color:rgba(141,168,255,.6);
-  }
-}
-#cursor-light{
+#backTop.visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+#backTop:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 18px 38px rgba(0,0,0,.48)}
+#scene{
   position:fixed;
-  left:0;top:0;
-  width:260px;height:260px;
-  margin:-130px 0 0 -130px;
-  border-radius:50%;
+  inset:0;
   pointer-events:none;
-  z-index:0;
-  opacity:0;
-  background:radial-gradient(circle,rgba(116,148,225,.10),rgba(116,148,225,.035) 28%,transparent 68%);
-  transition:opacity .25s ease;
+  z-index:-1;
+  overflow:hidden;
 }
-@media (hover:hover) and (pointer:fine){
-  body.has-pointer #cursor-light{opacity:1}
+.orb{
+  position:absolute;
+  width:180px;height:180px;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,rgba(213,226,255,.28),rgba(103,139,216,.10) 35%,transparent 70%);
+  filter:blur(.2px);
+  box-shadow:0 0 100px rgba(79,112,189,.10);
+  animation:float 11s ease-in-out infinite;
 }
-@media (prefers-reduced-motion:reduce){
+.orb:nth-child(1){left:7%;top:18%;animation-delay:-2s}
+.orb:nth-child(2){right:9%;top:56%;width:230px;height:230px;animation-delay:-6s}
+@keyframes float{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(22px,-30px,0) rotate(8deg)}
+}
+@media(max-width:720px){
+  .hero{padding-top:62px}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:auto;padding:28px}
+  .top{padding-top:42px}
+  .legal-section{padding:15px 12px 19px}
+  .content h2{font-size:24px}
+  th,td{font-size:14px;padding:10px}
+  #backTop{right:14px;bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     scroll-behavior:auto!important;
     animation-duration:.001ms!important;
     animation-iteration-count:1!important;
     transition-duration:.001ms!important;
   }
-  .legal-section{transform:none!important}
-  #cursor-light{display:none}
-}
-@media(max-width:700px){
-  .legal-section{
-    margin-left:-8px;margin-right:-8px;
-    padding:14px 14px 18px;
-    border-radius:14px;
-  }
-  #back-top{right:14px;bottom:14px}
-}
-
-.toc a[aria-current="true"]{
-  color:#fff;
-  font-weight:800;
-  text-shadow:0 0 20px rgba(141,168,255,.34);
-  transform:translate3d(4px,0,0);
+  .card,.mark,.legal-section{transform:none!important}
+  #cursorLight,#scene{display:none}
 }
 </style>
-</head><body>
-<header class="top"><div class="wrap"><div class="brand">⚓ Apex Syndicate of Malaysia</div><h1>Terms of Service</h1><div class="updated">Effective Date: September 10, 2026 · Last Updated: September 10, 2026</div><nav class="nav"><a href="index.html">Legal Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav></div></header>
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<div class="brand">⚓ Apex Syndicate of Malaysia™</div>
+<h1>Terms of Use</h1>
+<div class="updated">Effective Date: September 22, 2026 · Last Updated: September 22, 2026</div>
+<nav class="nav"><a href="index.html">Legal Home</a><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a></nav>
+</div>
+</header>
 <main class="content wrap">
-<div class="notice"><strong>Important:</strong> These Terms govern access to and use of ASM Tournament Bot. By adding the bot to a Discord server, authorizing it, using its commands, interacting with its components, or otherwise using its services, you acknowledge that you have read and agree to these Terms.</div>
-<div class="toc"><strong>Contents</strong><ol>
-<li><a href="#service">Service and Scope</a></li><li><a href="#definitions">Definitions</a></li><li><a href="#authority">Authority and Eligibility</a></li><li><a href="#discord">Discord Relationship</a></li><li><a href="#features">Features and Operational Rules</a></li><li><a href="#user-content">User and Server Content</a></li><li><a href="#acceptable">Acceptable Use</a></li><li><a href="#tournament">Tournament Integrity</a></li><li><a href="#third-party">Third-Party Services</a></li><li><a href="#permissions">Permissions and Administrative Controls</a></li><li><a href="#availability">Availability and Changes</a></li><li><a href="#security">Security and Responsible Use</a></li><li><a href="#ip">Intellectual Property</a></li><li><a href="#termination">Suspension and Termination</a></li><li><a href="#disclaimer">Disclaimers</a></li><li><a href="#liability">Limitation of Liability</a></li><li><a href="#indemnity">Indemnification</a></li><li><a href="#changes">Changes to These Terms</a></li><li><a href="#contact">Contact</a></li>
-</ol></div>
-<h2 id="service">1. Service and Scope</h2><p>ASM Tournament Bot is a Discord application operated for the Apex Syndicate of Malaysia tournament ecosystem and related communities. The service provides Discord-based automation and operational tooling for tournament management, match scheduling, attendance, staff assignments, tickets, score/result workflows, reminders, recurring communications, server administration and related utilities.</p><p>The bot is a third-party application and is not operated by Discord Inc. or represented as an official Discord product.</p>
-<h2 id="definitions">2. Definitions</h2><div class="definition"><strong>“Bot”</strong> means ASM Tournament Bot and its associated Discord application functionality.</div><div class="definition"><strong>“Operator”, “ASM”, “we”, “us”, or “our”</strong> means the team responsible for operating and maintaining ASM Tournament Bot.</div><div class="definition"><strong>“User” or “you”</strong> means a person interacting with, authorizing, administering, or otherwise using the Bot.</div><div class="definition"><strong>“Server”</strong> means a Discord guild in which the Bot is installed or used.</div><div class="definition"><strong>“Tournament Data”</strong> means records relating to tournaments, teams, participants, matches, schedules, attendance, staff assignments, results, recordings and related operational information.</div>
-<h2 id="authority">3. Authority and Eligibility</h2><p>You must have appropriate authority to install, authorize, configure, or operate the Bot in a Server. If you act on behalf of a Server, organization, tournament, team, or other entity, you represent that you have authority to do so.</p><p>Server owners and administrators are responsible for deciding whether the Bot is appropriate for their Server and for configuring permissions consistent with their own policies.</p>
-<h2 id="discord">4. Discord Relationship</h2><p>The Bot operates through Discord's platform and APIs. Your use of Discord remains subject to Discord's current Terms of Service, Community Guidelines, Developer Policies, and other applicable Discord rules. These Terms do not replace or override Discord's policies.</p><p>Discord is a separate service. Discord does not control the Bot's operation, tournament decisions, database practices, or policies.</p>
-<h2 id="features">5. Features and Operational Rules</h2><p>The Bot may provide, depending on Server configuration, features such as tournament creation and management, participant/team workflows, Challonge bracket operations, schedules, Judge and Recorder assignments, match tickets, attendance, score uploads and corrections, recording links, reminders, recurring embeds, staff configuration, moderation utilities, server information, managed webhook logging and related administrative functions.</p><p>Feature availability is not guaranteed for every Server. Some features depend on Discord permissions, configured channels and roles, database state, external APIs, third-party accounts, or tournament-specific configuration.</p><p>Bot-generated schedules, reminders, calculations, bracket updates and automated decisions should be reviewed by authorized tournament staff where accuracy is material. The Bot is an automation tool and does not replace human tournament administration.</p>
-<h2 id="user-content">6. User and Server Content</h2><p>You retain whatever rights you have in content you submit through Discord or the Bot. You grant the Operator a limited, non-exclusive permission to process that content to the extent reasonably necessary to provide the requested Bot functionality, maintain records, troubleshoot the service, enforce these Terms, prevent abuse, and comply with legal obligations.</p><p>You are responsible for having the authority to submit information about other individuals and for avoiding unnecessary sensitive information. Do not submit passwords, authentication tokens, payment credentials, API secrets, private keys, or other confidential credentials.</p>
-<h2 id="acceptable">7. Acceptable Use</h2><p>You must not use the Bot to:</p><ul><li>Break applicable law or regulation.</li><li>Violate Discord's Terms, policies, or platform restrictions.</li><li>Attempt unauthorized access to the Bot, databases, APIs, webhooks, credentials, or infrastructure.</li><li>Probe, scan, exploit, overload, or intentionally degrade the Bot or its supporting systems.</li><li>Bypass rate limits, permission checks, ownership checks, access controls, or other safeguards.</li><li>Submit malicious payloads or intentionally malformed data designed to cause failures.</li><li>Impersonate the Operator, tournament officials, staff members, or another person through the Bot.</li><li>Use the Bot to harass, threaten, defraud, stalk, or target other users.</li><li>Manipulate tournament records, scores, attendance, brackets, staff records, or competitive data dishonestly.</li><li>Use automated clients or scripts to generate abusive or excessive Bot interactions without authorization.</li><li>Attempt to obtain information that you are not authorized to access.</li><li>Interfere with another Server's use of the Bot.</li></ul>
-<h2 id="tournament">8. Tournament Integrity</h2><p>Tournament organizers and staff remain responsible for tournament rules, eligibility decisions, match rulings, score verification, disputes, deadlines, prizes, staff conduct, and final competitive outcomes.</p><p>Where the Bot records attendance, scores, staff assignments, match results, or related information, those records are operational records and may be relied upon by tournament staff. Deliberate manipulation is prohibited.</p><p>Automated result processing may depend on information supplied by users, Discord state, bracket providers, or other services. Staff should verify material corrections before relying on them for final decisions.</p>
-<h2 id="third-party">9. Third-Party Services</h2><p>The Bot may use or integrate with third-party services, including Discord, Challonge, Google Sheets, MongoDB-hosted infrastructure, and other infrastructure required for a configured feature.</p><p>Third-party services may impose their own availability, authentication, rate limits, data practices, terms, and technical constraints. A change, outage, suspension, API limitation, or failure may cause a Bot feature to become unavailable or behave differently.</p>
-<h2 id="permissions">10. Permissions and Administrative Controls</h2><p>Some Bot functions require elevated Discord permissions such as managing channels, roles, members, messages, or webhooks. Server administrators are responsible for granting only the permissions reasonably required by their intended use.</p><p>Some operations are intentionally restricted to configured staff or the Bot Owner. These restrictions are security and administrative controls and may not be bypassed through ordinary Discord permissions.</p><p>The Bot may create or manage Discord webhooks in channels where it has the required permission.</p>
-<h2 id="availability">11. Availability and Changes</h2><p>The Bot is a continuously evolving service. We may add, remove, modify, disable, rename, restrict, or replace features, commands, integrations, database structures, or operational workflows where reasonably necessary.</p><p>We do not guarantee uninterrupted availability, error-free operation, preservation of every historical feature, or compatibility with future Discord API changes.</p>
-<h2 id="security">12. Security and Responsible Use</h2><p>We use reasonable measures appropriate to the Bot's operation to protect application credentials and stored operational information. No internet-connected application or database can be guaranteed completely secure.</p><p>If you discover a security issue, do not exploit it, access information beyond your authorization, or publicly disclose credentials or private data. Contact the Developer Team with enough information to reproduce and investigate the issue safely.</p>
-<h2 id="ip">13. Intellectual Property</h2><p>Unless expressly stated otherwise, the Bot's name, branding, original software, documentation, visual assets, configuration design, and related materials are owned or controlled by their respective rights holders. These Terms grant only the limited right to use the Bot through its intended interfaces.</p><p>You may not represent the Bot as your own service, remove proprietary notices, or use ASM branding in a manner that falsely suggests endorsement or affiliation.</p>
-<h2 id="termination">14. Suspension and Termination</h2><p>We may restrict or terminate access to the Bot, remove the Bot from a Server, disable features, or block particular interactions when reasonably necessary for security, abuse prevention, policy compliance, maintenance, legal reasons, or protection of the service and its users.</p><p>Server administrators may remove the Bot at any time using Discord's normal controls. Removing the Bot does not necessarily erase historical records already stored in databases or third-party systems; deletion is governed by the Privacy Policy and applicable retention requirements.</p>
-<h2 id="disclaimer">15. Disclaimers</h2><p>To the maximum extent permitted by applicable law, the Bot is provided on an “as is” and “as available” basis. We disclaim warranties not expressly required by law, including implied warranties of merchantability, fitness for a particular purpose, non-infringement, availability, and uninterrupted operation.</p><p>We do not warrant that automated tournament calculations, reminders, schedules, result processing, external API responses, exports, or Discord interactions will always be complete, accurate, current, or available.</p>
-<h2 id="liability">16. Limitation of Liability</h2><p>To the maximum extent permitted by applicable law, the Operator and Developer Team will not be responsible for indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of data, revenue, prizes, tournament opportunities, reputation, or business arising from or related to use of or inability to use the Bot.</p><p>Nothing in these Terms excludes or limits liability that cannot lawfully be excluded or limited under applicable law.</p>
-<h2 id="indemnity">17. Indemnification</h2><p>To the extent permitted by applicable law, you agree to be responsible for claims, losses, liabilities, damages, and reasonable expenses arising from your misuse of the Bot, violation of these Terms, violation of applicable law or third-party rights, or unauthorized use of the Bot on behalf of another person or organization.</p>
-<h2 id="changes">18. Changes to These Terms</h2><p>We may revise these Terms when the Bot changes, legal requirements change, or operational practices change. The current version will be published on this page with an updated effective or last-updated date. Continued use after an updated version becomes effective constitutes acceptance of the revised Terms to the extent permitted by law.</p>
-<h2 id="contact">19. Contact</h2><p>For questions, support, legal notices, privacy-related requests, or security reports concerning ASM Tournament Bot, please <strong>contact the Developer Team</strong> through the official support or administrative channel provided by the Bot operator.</p>
-<p class="small">These Terms describe the operating rules for ASM Tournament Bot. They are not legal advice and should be reviewed by qualified legal counsel if jurisdiction-specific terms are required.</p>
-</main><footer class="footer"><div class="wrap">© 2026 Apex Syndicate of Malaysia. All rights reserved.</div></footer>
+<div class="notice"><strong>Before you use the Bot.</strong> These Terms explain the ground rules for Apex Vanguard™. If you add the Bot to a Server, authorize it or use its features, these Terms apply to you to the extent the law allows.</div>
+<div class="toc"><strong>Contents</strong><ol><li><a href="#service">1. Service and Scope</a></li><li><a href="#definitions">2. Definitions</a></li><li><a href="#authority">3. Authority and Eligibility</a></li><li><a href="#discord">4. Discord Relationship</a></li><li><a href="#acceptance">5. Acceptance and Electronic Agreement</a></li><li><a href="#features">6. Features and Operational Rules</a></li><li><a href="#content">7. User and Server Content</a></li><li><a href="#acceptable">8. Acceptable Use</a></li><li><a href="#tournament">9. Tournament Integrity</a></li><li><a href="#thirdparty">10. Third Party Services</a></li><li><a href="#permissions">11. Permissions and Administrative Controls</a></li><li><a href="#security">12. Security and Responsible Use</a></li><li><a href="#availability">13. Availability and Changes</a></li><li><a href="#intellectual">14. Intellectual Property</a></li><li><a href="#privacy">15. Privacy</a></li><li><a href="#suspension">16. Suspension and Termination</a></li><li><a href="#disclaimer">17. Disclaimers</a></li><li><a href="#liability">18. Limitation of Liability</a></li><li><a href="#indemnity">19. Indemnification</a></li><li><a href="#changes">20. Changes to These Terms</a></li><li><a href="#contact">21. Contact and Notices</a></li></ol></div>
+<h2 id="service">1. Service and Scope</h2><p>Apex Vanguard™ is a Discord application operated within the Apex Syndicate of Malaysia™ ecosystem and made available to communities in different countries. The Bot is not limited to users in Malaysia. It provides Discord based automation and operational tooling for tournament management, match scheduling, attendance, staff assignments, tickets, score and result workflows, reminders, recurring communications, server administration and related utilities.</p><p>Apex Vanguard™ is a third party application. It is not operated by Discord Inc. and is not an official Discord product.</p><p>Different countries can give users different mandatory rights. Nothing in these Terms is meant to take away a right or protection that the law applicable to you does not allow us to exclude. For users in India, Malaysia, the European Economic Area, the United Kingdom or elsewhere, the local rules that actually apply to the relevant use of the Bot will continue to govern where they are mandatory.</p><h2 id="definitions">2. Definitions</h2><p>“Bot” means Apex Vanguard™ and its associated application functionality.</p><p>“Operator”, “ASM”, “we”, “us” or “our” means the person or organization responsible for operating Apex Vanguard™.</p><p>“User” or “you” means a person who authorizes, administers, accesses or interacts with the Bot.</p><p>“Server” means a Discord guild in which Apex Vanguard™ is installed or used.</p><p>“Tournament Data” means records relating to tournaments, teams, participants, matches, schedules, attendance, staff assignments, results, recordings and related operational information.</p><h2 id="authority">3. Authority and Eligibility</h2><p>You must have appropriate authority to install, authorize, configure or operate Apex Vanguard™ in a Server.</p><p>If you act for a Server, organization, tournament, team or other entity, you represent that you have authority to do so.</p><p>Server owners and administrators are responsible for deciding whether the Bot is appropriate for their Server and for configuring permissions consistently with their own policies.</p><h2 id="discord">4. Discord Relationship</h2><p>Your use of Discord remains subject to Discord's current Terms of Service, Community Guidelines, Developer Terms, Developer Policy and other applicable Discord rules.</p><p>These Terms govern the relationship concerning Apex Vanguard™ and do not replace or override Discord's policies.</p><p>Discord is a separate service and does not control the Bot's tournament decisions, database practices or internal operating policies.</p><h2 id="acceptance">5. Acceptance and Electronic Agreement</h2><p>When you add Apex Vanguard™ to a Server, authorize it or use the Bot, you are agreeing to these Terms to the extent the law allows.</p><p>If you do not agree with them, please do not authorize or use the Bot.</p><h2 id="features">6. Features and Operational Rules</h2><p>Depending on configuration, Apex Vanguard™ may provide tournament creation and management, participant and team workflows, Challonge bracket operations, schedules, Judge and Recorder assignments, match tickets, attendance, score uploads, corrections, recording links, reminders, recurring communications, staff configuration, moderation utilities, server information, managed webhook logging and related administrative functions.</p><p>Feature availability depends on Discord permissions, configured channels and roles, database state, external APIs, integration accounts and tournament configuration.</p><p>Automated schedules, reminders, calculations, bracket updates and result processing should be reviewed by authorized tournament staff where accuracy is material. The Bot is an automation tool and does not replace human tournament administration.</p><h2 id="content">7. User and Server Content</h2><p>You retain whatever rights you have in content you submit through Discord or the Bot.</p><p>You grant the Operator a limited, non exclusive right to process submitted content only as reasonably necessary to provide the requested functionality, maintain operational records, troubleshoot the service, enforce these Terms, prevent abuse, protect security and comply with legal obligations.</p><p>You are responsible for having authority to submit information about other individuals. Do not submit passwords, authentication tokens, payment credentials, API secrets, private keys or other confidential credentials.</p><h2 id="acceptable">8. Acceptable Use</h2><p>You must not use Apex Vanguard™ to break applicable law, violate Discord policies, attempt unauthorized access, probe or exploit infrastructure, bypass permission checks or rate limits, submit malicious payloads, impersonate officials or staff, harass or defraud users, manipulate tournament records dishonestly, generate abusive automated interactions, obtain information you are not authorized to access, or interfere with another Server's use of the Bot.</p><p>You must not use the Bot to introduce malware, malicious scripts or other harmful content into the Bot's infrastructure or into a connected service.</p><p>You must not attempt to reverse engineer or circumvent security controls except to the extent that applicable law expressly permits such activity and the activity does not compromise another person's information or the security of the service.</p><h2 id="tournament">9. Tournament Integrity</h2><p>Tournament organizers and staff remain responsible for tournament rules, eligibility decisions, match rulings, score verification, disputes, deadlines, prizes, staff conduct and final competitive outcomes.</p><p>Where Apex Vanguard™ records attendance, scores, staff assignments, match results or related information, those records are operational records. Deliberate manipulation, unauthorized correction or fraudulent submission is prohibited.</p><p>Automated processing may depend on information supplied by users, Discord state, bracket providers or other services. Authorized staff should verify material corrections before relying on them for final decisions.</p><h2 id="thirdparty">10. Third Party Services</h2><p>Apex Vanguard™ may integrate with Discord, Challonge, Google Sheets, MongoDB infrastructure and other services required for configured functionality.</p><p>Third party services may impose their own authentication requirements, availability limitations, rate limits, terms, privacy practices and technical constraints.</p><p>A third party outage, API change, suspension or limitation may cause a Bot feature to become unavailable or behave differently. The Operator is not responsible for independent third party failures to the extent permitted by applicable law.</p><h2 id="permissions">11. Permissions and Administrative Controls</h2><p>Some Bot functions require elevated Discord permissions such as managing channels, roles, members, messages or webhooks.</p><p>Server administrators are responsible for granting permissions appropriate to their intended use. The Operator may document recommended permissions, but Server administrators remain responsible for their own permission configuration.</p><p>Some operations are intentionally restricted to the Bot Owner, configured staff or other authorized users. Ordinary Discord permissions do not override those application level controls.</p><h2 id="security">12. Security and Responsible Use</h2><p>We use reasonable technical and organisational measures to protect the Bot, its credentials and the operational information it stores.</p><p>No internet connected service can guarantee complete security. You must not attempt unauthorized access, credential theft, data extraction, denial of service, exploitation or other conduct that could compromise the Bot or another user's information.</p><p>Security reports should be made privately through the official support or administrative channel. Do not publicly disclose credentials or private data.</p><h2 id="availability">13. Availability and Changes</h2><p>Apex Vanguard™ changes over time. We may add, remove, change or temporarily disable commands, integrations and other parts of the service when there is a practical reason to do so.</p><p>We cannot promise that the Bot will always be online, that every operation will be error free, that an old feature will remain forever or that future Discord or third party API changes will not affect it.</p><p>Scheduled maintenance, emergency maintenance, provider outages, rate limits, security incidents and other events may temporarily affect availability.</p><h2 id="intellectual">14. Intellectual Property</h2><p>Unless expressly stated otherwise, the Apex Vanguard™ name, original software, documentation, visual assets, interface design, branding and related materials are owned or controlled by their respective rights holders.</p><p>These Terms give you permission to use the Bot through its intended interfaces. They do not transfer ownership of the Bot or its underlying software to you.</p><p>You must not represent Apex Vanguard™ or Apex Syndicate of Malaysia™ branding as your own service, remove proprietary notices or create a misleading impression of endorsement or affiliation.</p><h2 id="privacy">15. Privacy</h2><p>The Operator's processing of personal information is described in the Privacy Policy.</p><p>Use of Apex Vanguard™ may involve information processed by Discord and configured third party services. Their independent terms and privacy policies also apply to their respective processing.</p><p>You should review the Privacy Policy before using the Bot.</p><h2 id="suspension">16. Suspension and Termination</h2><p>We may restrict access to Apex Vanguard™, disable a feature or remove the Bot from a Server when reasonably necessary to deal with abuse, security problems, maintenance, legal requirements or conduct that puts the service or other users at risk.</p><p>Server administrators may remove the Bot at any time through Discord's normal controls.</p><p>Removing the Bot does not necessarily erase historical records already stored by the Bot or connected services. Deletion is governed by the Privacy Policy and applicable retention requirements.</p><h2 id="disclaimer">17. Disclaimers</h2><p>To the maximum extent permitted by applicable law, Apex Vanguard™ is provided on an as is and as available basis.</p><p>The Operator disclaims warranties that are not expressly required by applicable law, including implied warranties of merchantability, fitness for a particular purpose, non infringement, availability and uninterrupted operation.</p><p>The Operator does not warrant that automated calculations, reminders, schedules, result processing, exports, external API responses or Discord interactions will always be complete, accurate, current or available.</p><h2 id="liability">18. Limitation of Liability</h2><p>To the maximum extent permitted by applicable law, the Operator will not be liable for indirect, incidental, special, consequential, exemplary or punitive losses, or for loss of data, revenue, prizes, tournament opportunities, reputation or business arising from or related to use of or inability to use Apex Vanguard™.</p><p>Nothing in these Terms excludes or limits liability that cannot lawfully be excluded or limited under applicable law.</p><p>Nothing in these Terms removes rights or remedies that applicable law does not permit the Operator to exclude.</p><h2 id="indemnity">19. Indemnification</h2><p>To the extent permitted by applicable law, you agree to be responsible for claims, losses, liabilities, damages and reasonable expenses arising from your misuse of Apex Vanguard™, violation of these Terms, violation of applicable law or third party rights, or unauthorized use of the Bot on behalf of another person or organization.</p><p>This provision applies only to the extent that indemnification is permitted under applicable law.</p><h2 id="changes">20. Changes to These Terms</h2><p>We may update these Terms when the Bot, our operating practices or the law changes.</p><p>The latest version will be posted on this page with a new effective date. If the law requires additional notice or consent for a material change, we will follow that requirement.</p><p>Continued use after an updated version becomes effective constitutes acceptance of the revised Terms to the extent permitted by applicable law.</p><h2 id="contact">21. Contact and Notices</h2><p>If you need help, want to raise a legal or privacy question or need to report a security issue, contact the Developer Team through the official support or administrative channel designated by Apex Syndicate of Malaysia™.</p><p>If formal legal notices are required, the Operator may designate an appropriate notice address or channel separately.</p>
+<p class="small">These Terms are written for the current Apex Vanguard™ service. Before relying on them as final legal terms, the Operator should have counsel review the actual business structure, data flows and countries in which the service is offered.</p>
+</main>
+<footer class="footer"><div class="wrap">© 2026 Apex Syndicate of Malaysia™. All rights reserved.</div></footer>
 <script>
 (() => {
   "use strict";
-  if (window.__asmLegal3DInitialized) return;
-  window.__asmLegal3DInitialized = true;
+  if (window.__avLegalSite) return;
+  window.__avLegalSite = true;
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
   const root = document.documentElement;
   const body = document.body;
 
-  const progress = document.createElement("div");
-  progress.id = "scroll-progress";
-  progress.setAttribute("aria-hidden", "true");
-  body.prepend(progress);
+  const scene = document.createElement("div");
+  scene.id = "scene";
+  scene.setAttribute("aria-hidden","true");
+  scene.innerHTML = '<div class="orb"></div><div class="orb"></div>';
+  body.appendChild(scene);
 
   const light = document.createElement("div");
-  light.id = "cursor-light";
-  light.setAttribute("aria-hidden", "true");
+  light.id = "cursorLight";
+  light.setAttribute("aria-hidden","true");
   body.appendChild(light);
 
-  const topButton = document.createElement("button");
-  topButton.id = "back-top";
-  topButton.type = "button";
-  topButton.setAttribute("aria-label", "Back to top");
-  topButton.title = "Back to top";
-  topButton.textContent = "↑";
-  body.appendChild(topButton);
+  const progress = document.createElement("div");
+  progress.id = "progress";
+  progress.setAttribute("aria-hidden","true");
+  body.prepend(progress);
 
-  function updateScroll() {
-    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
-    progress.style.width = pct + "%";
-    topButton.classList.toggle("visible", window.scrollY > 520);
-  }
-  updateScroll();
-  window.addEventListener("scroll", updateScroll, {passive:true});
+  const top = document.createElement("button");
+  top.id = "backTop";
+  top.type = "button";
+  top.setAttribute("aria-label","Back to top");
+  top.textContent = "↑";
+  body.appendChild(top);
 
-  topButton.addEventListener("click", () => {
-    window.scrollTo({top:0, behavior: reduced ? "auto" : "smooth"});
-  });
+  const update = () => {
+    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    progress.style.width = Math.min(100, Math.max(0, scrollY / max * 100)) + "%";
+    top.classList.toggle("visible", scrollY > 520);
+  };
+  update();
+  addEventListener("scroll", update, {passive:true});
+  top.addEventListener("click", () => scrollTo({top:0,behavior:reduced ? "auto" : "smooth"}));
 
-  // Convert each legal H2-led section into an independent 3D surface.
   const main = document.querySelector(".content");
   if (main) {
-    const headings = Array.from(main.querySelectorAll("h2"));
+    const headings = [...main.querySelectorAll("h2")];
     headings.forEach((heading) => {
       const section = document.createElement("section");
       section.className = "legal-section";
-      section.id = heading.id ? "section-" + heading.id : "";
       main.insertBefore(section, heading);
-
       let node = heading;
-      while (node && node !== section.nextElementSibling) {
+      while (node) {
         const next = node.nextSibling;
         section.appendChild(node);
+        if (!next || (next.nodeType === 1 && next.matches("h2"))) break;
         node = next;
-        if (node && node.nodeType === Node.ELEMENT_NODE && node.matches("h2")) break;
       }
     });
   }
 
-  const sections = Array.from(document.querySelectorAll(".legal-section"));
-
+  const sections = [...document.querySelectorAll(".legal-section")];
   if (!reduced && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
@@ -336,75 +479,64 @@ tbody tr{
           obs.unobserve(entry.target);
         }
       });
-    }, {threshold:0.08, rootMargin:"0px 0px -8% 0px"});
-    sections.forEach(section => observer.observe(section));
+    }, {threshold:.06,rootMargin:"0px 0px -8% 0px"});
+    sections.forEach(s => observer.observe(s));
   } else {
-    sections.forEach(section => section.classList.add("is-visible"));
+    sections.forEach(s => s.classList.add("is-visible"));
   }
 
-  // Subtle, bounded 3D tilt: only the block under the pointer moves.
-  if (!reduced && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+  if (!reduced && finePointer) {
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("pointermove", event => {
+        const r = card.getBoundingClientRect();
+        const x = (event.clientX-r.left) / Math.max(1,r.width);
+        const y = (event.clientY-r.top) / Math.max(1,r.height);
+        const ry = ((x-.5)*7).toFixed(2);
+        const rx = ((.5-y)*5).toFixed(2);
+        card.style.setProperty("--rx",rx+"deg");
+        card.style.setProperty("--ry",ry+"deg");
+        card.style.setProperty("--cx",(x*100)+"%");
+        card.style.setProperty("--cy",(y*100)+"%");
+        card.style.transform = `perspective(1400px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-8px,20px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+        card.style.removeProperty("--rx");
+        card.style.removeProperty("--ry");
+      });
+    });
+
+    const mark = document.querySelector(".mark");
+    if (mark) {
+      mark.addEventListener("pointermove", event => {
+        const r=mark.getBoundingClientRect();
+        const x=(event.clientX-r.left)/Math.max(1,r.width);
+        const y=(event.clientY-r.top)/Math.max(1,r.height);
+        mark.style.transform=`perspective(700px) rotateX(${((.5-y)*10).toFixed(2)}deg) rotateY(${((x-.5)*12).toFixed(2)}deg) translateZ(18px) scale(1.05)`;
+      });
+      mark.addEventListener("pointerleave",()=>mark.style.transform="");
+    }
+
     sections.forEach(section => {
       section.addEventListener("pointermove", event => {
-        const rect = section.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / Math.max(1, rect.width);
-        const y = (event.clientY - rect.top) / Math.max(1, rect.height);
-        const ry = ((x - 0.5) * 3.0).toFixed(2);
-        const rx = ((0.5 - y) * 2.2).toFixed(2);
-        section.style.setProperty("--rx", rx + "deg");
-        section.style.setProperty("--ry", ry + "deg");
-        section.style.transform =
-          `perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-5px,14px)`;
+        const r=section.getBoundingClientRect();
+        const x=(event.clientX-r.left)/Math.max(1,r.width);
+        const y=(event.clientY-r.top)/Math.max(1,r.height);
+        const ry=((x-.5)*2.6).toFixed(2);
+        const rx=((.5-y)*1.8).toFixed(2);
+        section.style.transform=`perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-4px,10px)`;
       });
-      section.addEventListener("pointerleave", () => {
-        section.style.removeProperty("--rx");
-        section.style.removeProperty("--ry");
-        section.style.transform = "";
-      });
+      section.addEventListener("pointerleave",()=>section.style.transform="");
     });
 
     body.addEventListener("pointermove", event => {
-      body.classList.add("has-pointer");
-      root.style.setProperty("--mx", event.clientX + "px");
-      root.style.setProperty("--my", event.clientY + "px");
-      light.style.transform = `translate3d(${event.clientX}px,${event.clientY}px,0)`;
+      body.classList.add("pointer");
+      root.style.setProperty("--mx",event.clientX+"px");
+      root.style.setProperty("--my",event.clientY+"px");
+      light.style.transform=`translate3d(${event.clientX}px,${event.clientY}px,0)`;
     }, {passive:true});
-
-    body.addEventListener("pointerleave", () => body.classList.remove("has-pointer"));
   }
-
-  // Highlight the current contents item while scrolling.
-  const tocLinks = Array.from(document.querySelectorAll(".toc a[href^='#']"));
-  const targetMap = new Map();
-  tocLinks.forEach(link => {
-    const id = link.getAttribute("href").slice(1);
-    const target = document.getElementById(id);
-    if (target) targetMap.set(id, link);
-  });
-
-  if (!reduced && "IntersectionObserver" in window && targetMap.size) {
-    const tocObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        tocLinks.forEach(link => link.removeAttribute("aria-current"));
-        const link = targetMap.get(entry.target.id);
-        if (link) link.setAttribute("aria-current", "true");
-      });
-    }, {rootMargin:"-18% 0px -68% 0px", threshold:0});
-    targetMap.forEach((_, id) => {
-      const target = document.getElementById(id);
-      if (target) tocObserver.observe(target);
-    });
-  }
-
-  // Keep keyboard users fully supported.
-  document.addEventListener("keydown", event => {
-    if (event.key === "Home" && !event.ctrlKey && !event.metaKey && !event.altKey) {
-      const active = document.activeElement;
-      const editing = active && /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName);
-      if (!editing) window.scrollTo({top:0, behavior: reduced ? "auto" : "smooth"});
-    }
-  });
 })();
 </script>
-</body></html>
+</body>
+</html>
