@@ -3,7 +3,7 @@
 > **Official public legal documentation repository for Apex Vanguard™, a Discord application operated within the Apex Syndicate of Malaysia™ ecosystem.**
 
 [![Legal](https://img.shields.io/badge/Legal-Terms%20%26%20Privacy-5865F2?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)
-[![Terms](https://img.shields.io/badge/Terms-of-Service-111827?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)
+[![Terms](https://img.shields.io/badge/Terms%20of%20Service-111827?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/terms.html)
 [![Privacy](https://img.shields.io/badge/Privacy-Policy-111827?style=for-the-badge)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/privacy.html)
 [![GitHub Pages](https://img.shields.io/badge/Website-GitHub%20Pages-24292F?style=for-the-badge&logo=github)](https://at-info-tech-world.github.io/ASM-Tournament-Bot-Legal/)
 
