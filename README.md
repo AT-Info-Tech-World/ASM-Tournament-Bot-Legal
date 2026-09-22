@@ -1,4 +1,4 @@
-# ⚓ Apex Vanguard™ — Legal Repository
+# ⚓ Apex Vanguard™ Legal Repository
 
 > **Official public legal documentation repository for Apex Vanguard™, a Discord application operated within the Apex Syndicate of Malaysia™ ecosystem.**
 
