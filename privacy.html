@@ -426,6 +426,127 @@ body.pointer #cursorLight{opacity:1}
 <script>
 (() => {
   "use strict";
+
+  /*
+   * Apex Vanguard™ legal reading-state storage.
+   *
+   * IMPORTANT:
+   * This is a static GitHub Pages implementation. The encrypted blob prevents
+   * casual plaintext editing of localStorage and detects tampering with the blob,
+   * but a browser cannot keep a cryptographic key secret when the key is shipped
+   * in public JavaScript. True tamper-resistant legal acceptance requires a
+   * server-side authenticated consent service.
+   */
+
+  const STORAGE_KEY = "av_legal_state_v2";
+  const KEY_MATERIAL = "Apex-Vanguard-Legal-State-v2-9f2c7d31";
+  const VERSION = 2;
+
+  const textEncoder = new TextEncoder();
+  const textDecoder = new TextDecoder();
+
+  const bytesToBase64 = bytes =>
+    btoa(String.fromCharCode(...new Uint8Array(bytes)));
+
+  const base64ToBytes = value =>
+    Uint8Array.from(atob(value), c => c.charCodeAt(0));
+
+  async function deriveKey() {
+    const material = await crypto.subtle.importKey(
+      "raw",
+      textEncoder.encode(KEY_MATERIAL),
+      "PBKDF2",
+      false,
+      ["deriveKey"]
+    );
+
+    return crypto.subtle.deriveKey(
+      {
+        name: "PBKDF2",
+        salt: textEncoder.encode("ApexVanguard-Legal-State-Salt-v2"),
+        iterations: 120000,
+        hash: "SHA-256"
+      },
+      material,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["encrypt", "decrypt"]
+    );
+  }
+
+  async function saveState(state) {
+    const key = await deriveKey();
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const payload = JSON.stringify({
+      version: VERSION,
+      ...state
+    });
+
+    const encrypted = await crypto.subtle.encrypt(
+      { name: "AES-GCM", iv },
+      key,
+      textEncoder.encode(payload)
+    );
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      version: VERSION,
+      iv: bytesToBase64(iv),
+      data: bytesToBase64(encrypted)
+    }));
+  }
+
+  async function loadState() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+
+    try {
+      const envelope = JSON.parse(raw);
+
+      if (
+        envelope.version !== VERSION ||
+        typeof envelope.iv !== "string" ||
+        typeof envelope.data !== "string"
+      ) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+
+      const key = await deriveKey();
+
+      const decrypted = await crypto.subtle.decrypt(
+        {
+          name: "AES-GCM",
+          iv: base64ToBytes(envelope.iv)
+        },
+        key,
+        base64ToBytes(envelope.data)
+      );
+
+      const state = JSON.parse(textDecoder.decode(decrypted));
+
+      if (!state || state.version !== VERSION) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+
+      return state;
+    } catch {
+      // Modified, corrupted or incompatible storage is rejected.
+      localStorage.removeItem(STORAGE_KEY);
+      return null;
+    }
+  }
+
+  window.ApexVanguardLegalState = Object.freeze({
+    save: saveState,
+    load: loadState
+  });
+})();
+</script>
+
+<script>
+(() => {
+  "use strict";
   if (window.__avLegalSite) return;
   window.__avLegalSite = true;
 
@@ -551,5 +672,45 @@ body.pointer #cursorLight{opacity:1}
   }
 })();
 </script>
+
+<script>
+(() => {
+  "use strict";
+
+  const pageType = "privacy";
+  const stateApi = window.ApexVanguardLegalState;
+
+  if (!stateApi) return;
+
+  let reachedBottom = false;
+
+  const markRead = async () => {
+    if (reachedBottom) return;
+
+    const scrollable = Math.max(
+      1,
+      document.documentElement.scrollHeight - window.innerHeight
+    );
+
+    if (window.scrollY >= scrollable - 80) {
+      reachedBottom = true;
+
+      const state = (await stateApi.load()) || {};
+
+      state[pageType] = {
+        read: true,
+        readAt: new Date().toISOString()
+      };
+
+      await stateApi.save(state);
+    }
+  };
+
+  addEventListener("scroll", markRead, { passive: true });
+  addEventListener("load", markRead);
+  setTimeout(markRead, 900);
+})();
+</script>
+
 </body>
 </html>

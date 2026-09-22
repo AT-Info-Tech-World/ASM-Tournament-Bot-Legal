@@ -1,214 +1,857 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1220"><title>ASM Tournament Bot — Legal</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050812">
+<title>Apex Vanguard™ | Legal</title>
 <style>
-:root{--bg:#070b13;--text:#edf3ff;--muted:#a8b5c9;--line:#263650;--accent2:#cbd7ff}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -8%,#1c2c51 0,#070b13 43%);color:var(--text);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--accent2);text-decoration:none}.wrap{width:min(1080px,92%);margin:auto}.hero{padding:92px 0 65px;text-align:center}.mark{width:82px;height:82px;margin:0 auto 25px;border:1px solid var(--line);border-radius:23px;background:linear-gradient(145deg,#172746,#0b1220);display:grid;place-items:center;font-size:36px;box-shadow:0 22px 70px #0008}.eyebrow{text-transform:uppercase;letter-spacing:.17em;color:var(--accent2);font-size:12px;font-weight:850}.hero h1{font-size:clamp(38px,7vw,66px);line-height:1.02;margin:13px 0}.hero p{max-width:760px;margin:18px auto;color:var(--muted);font-size:18px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding-bottom:82px}.card{background:linear-gradient(180deg,#101a2b,#0b1220);border:1px solid var(--line);border-radius:20px;padding:31px}.icon{font-size:28px}.card h2{margin:9px 0}.card p{color:var(--muted)}.button{display:inline-block;margin-top:10px;padding:11px 17px;border-radius:10px;background:#182747;border:1px solid #33486f;font-weight:750}.footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:14px}@media(max-width:700px){.cards{grid-template-columns:1fr}.hero{padding-top:60px}}
-
-/* Interactive hover motion */
-.mark,.card,.button,.footer a{
-  position:relative;
-  transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s ease,border-color .22s ease;
-  will-change:transform;
+:root{
+  --bg:#050812;
+  --panel:#0b1220;
+  --panel2:#101a2d;
+  --text:#f2f6ff;
+  --muted:#aab7cc;
+  --line:rgba(151,176,230,.20);
+  --lineStrong:rgba(151,176,230,.42);
+  --accent:#8faeff;
+  --accent2:#d9e3ff;
+  --shadow:rgba(0,0,0,.58);
+  --mx:50%;
+  --my:15%;
 }
-.mark:hover{
-  transform:translateY(-7px) scale(1.045);
-  z-index:5;
-  box-shadow:0 30px 85px #000b;
-}
-.card:hover{
-  transform:translateY(-9px) scale(1.018);
-  z-index:5;
-  border-color:#49648f;
-  box-shadow:0 24px 65px #0009;
-}
-.button:hover,.footer a:hover{
-  transform:translate3d(0,-4px,0) scale(1.045);
-  z-index:10;
-  box-shadow:0 12px 30px #0008;
-}
-.button:active,.footer a:active{
-  transform:translate3d(0,-1px,0) scale(1.01);
-}
-
-/* =========================================================
-   ASM LEGAL HOME — PREMIUM 3D INTERACTION
-   ========================================================= */
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:28px}
 body{
-  position:relative;
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at var(--mx) var(--my),rgba(75,111,195,.17),transparent 64%),
+    radial-gradient(700px 420px at 92% 82%,rgba(48,76,135,.10),transparent 68%),
+    linear-gradient(145deg,#050812,#070c17 48%,#050812);
+  font:16px/1.78 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   overflow-x:hidden;
   isolation:isolate;
-  background:
-    radial-gradient(850px 560px at var(--mx,50%) var(--my,10%),rgba(69,105,184,.16),transparent 62%),
-    radial-gradient(circle at 50% -8%,#1c2c51 0,#070b13 43%);
 }
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:-1;
+  z-index:-3;
   background:
-    linear-gradient(120deg,transparent 0 48%,rgba(141,168,255,.025) 50%,transparent 52%),
-    radial-gradient(circle at 80% 80%,rgba(60,92,154,.07),transparent 30%);
+    linear-gradient(120deg,transparent 0 47%,rgba(171,195,255,.022) 50%,transparent 53%),
+    radial-gradient(circle at 15% 80%,rgba(102,133,199,.06),transparent 28%);
 }
-.hero{perspective:1200px}
-.mark{
-  transform-style:preserve-3d;
-  transition:transform .16s ease-out,box-shadow .3s ease,border-color .3s ease;
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:10;
+  opacity:.12;
+  background-image:radial-gradient(rgba(255,255,255,.20) .6px,transparent .6px);
+  background-size:5px 5px;
+  mix-blend-mode:soft-light;
+}
+a{color:var(--accent2);text-decoration:none}
+a:hover{color:#fff}
+button{font:inherit}
+.wrap{width:min(1080px,92vw);margin:0 auto}
+.hero{
+  position:relative;
+  padding:90px 0 70px;
+  text-align:center;
+  perspective:1400px;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--accent2);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
 }
 .hero h1{
-  text-shadow:0 18px 50px rgba(0,0,0,.48);
-  transition:transform .3s ease;
+  margin:17px 0 13px;
+  font-size:clamp(42px,7vw,76px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  text-shadow:0 20px 70px rgba(0,0,0,.62);
+}
+.hero p{
+  max-width:790px;
+  margin:20px auto 0;
+  color:var(--muted);
+  font-size:18px;
+}
+.mark{
+  width:94px;
+  height:94px;
+  margin:0 auto 27px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--lineStrong);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(24,39,70,.96),rgba(7,13,25,.92));
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.60),
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -20px 40px rgba(0,0,0,.18);
+  transform-style:preserve-3d;
+  font-size:40px;
+}
+.mark::after{
+  content:"";
+  position:absolute;
+  width:125px;
+  height:125px;
+  border-radius:34px;
+  border:1px solid rgba(143,174,255,.10);
+  transform:translateZ(-18px) rotate(10deg);
+}
+.eyebrow{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  padding:0 0 90px;
+  perspective:1400px;
 }
 .card{
   position:relative;
   overflow:hidden;
+  min-height:290px;
+  padding:34px;
+  border:1px solid var(--line);
+  border-radius:26px;
+  background:
+    radial-gradient(350px 220px at var(--cx,50%) var(--cy,0%),rgba(143,174,255,.10),transparent 70%),
+    linear-gradient(145deg,rgba(17,29,50,.94),rgba(8,14,26,.94));
+  box-shadow:
+    0 32px 90px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.055),
+    inset 0 -30px 70px rgba(0,0,0,.16);
   transform-style:preserve-3d;
-  transform:perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
-  transition:transform .16s ease-out,box-shadow .28s ease,border-color .28s ease;
+  transform:perspective(1400px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
+  transition:transform .16s ease-out,border-color .3s ease,box-shadow .3s ease;
 }
 .card::before{
   content:"";
   position:absolute;
-  inset:-2px;
+  inset:0;
   pointer-events:none;
-  opacity:0;
-  background:radial-gradient(280px 180px at var(--cx,50%) var(--cy,20%),rgba(141,168,255,.14),transparent 68%);
-  transition:opacity .25s ease;
+  background:linear-gradient(115deg,rgba(255,255,255,.055),transparent 20%,transparent 72%,rgba(143,174,255,.035));
 }
-.card>*{position:relative;transform:translateZ(18px)}
-.card .icon{transform:translateZ(30px);transition:transform .22s ease}
-.card h2{transform:translateZ(24px);transition:transform .22s ease}
+.card:hover{
+  border-color:rgba(143,174,255,.48);
+  box-shadow:
+    0 48px 120px rgba(0,0,0,.58),
+    0 0 50px rgba(92,126,201,.10),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+.card > *{position:relative;z-index:1;transform:translateZ(22px)}
+.icon{font-size:34px;filter:drop-shadow(0 12px 25px rgba(0,0,0,.55))}
+.card h2{margin:12px 0 9px;font-size:28px}
+.card p{color:var(--muted);margin:0 0 19px}
 .button{
-  transform:translateZ(34px);
-  transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease,border-color .2s ease,background .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 17px;
+  border:1px solid rgba(143,174,255,.30);
+  border-radius:13px;
+  background:linear-gradient(145deg,#172747,#0b1528);
+  color:#f5f8ff;
+  font-weight:850;
+  box-shadow:0 14px 35px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.06);
+  transform:translateZ(35px);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
 }
-@media (hover:hover) and (pointer:fine){
-  .card:hover{
-    border-color:rgba(141,168,255,.58);
-    box-shadow:0 34px 80px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.055);
-    z-index:8;
-  }
-  .card:hover::before{opacity:1}
-  .card:hover .icon{transform:translateZ(42px) scale(1.08)}
-  .card:hover h2{transform:translateZ(34px) translateX(3px)}
-  .button:hover{
-    transform:translateZ(48px) translateY(-5px) scale(1.06);
-    box-shadow:0 18px 34px rgba(0,0,0,.46);
-    border-color:rgba(141,168,255,.65);
-  }
+.button:hover{
+  transform:translate3d(0,-6px,45px) scale(1.04);
+  border-color:rgba(143,174,255,.65);
+  box-shadow:0 24px 45px rgba(0,0,0,.50),0 0 30px rgba(104,139,219,.10);
+  color:#fff;
 }
-.card:focus-visible{
-  outline:2px solid #8da8ff;
-  outline-offset:4px;
+.footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 50px;
+  color:var(--muted);
+  font-size:14px;
 }
-#home-light{
+.footer a{display:inline-block;margin-left:7px}
+.footer a:hover{transform:translateY(-2px)}
+.top{
+  position:relative;
+  padding:58px 0 34px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.top .wrap{position:relative;z-index:2}
+.top h1{
+  margin:13px 0 8px;
+  font-size:clamp(38px,6vw,64px);
+  line-height:1;
+  letter-spacing:-.04em;
+  text-shadow:0 18px 60px rgba(0,0,0,.60);
+}
+.updated{color:var(--muted);font-size:14px}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.nav a{
+  display:inline-block;
+  padding:9px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(10,19,34,.72);
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.nav a:hover{
+  transform:translate3d(0,-5px,20px);
+  border-color:var(--lineStrong);
+  box-shadow:0 20px 40px rgba(0,0,0,.42);
+}
+.content{padding:42px 0 86px}
+.notice,.toc{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px 24px;
+  background:linear-gradient(145deg,rgba(17,30,52,.90),rgba(8,14,26,.90));
+  box-shadow:0 25px 65px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.045);
+  transform:translateZ(0);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.notice:hover,.toc:hover{
+  transform:translateY(-6px);
+  border-color:var(--lineStrong);
+  box-shadow:0 35px 85px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.toc{margin:26px 0 40px}
+.toc strong{display:block;margin-bottom:10px}
+.toc ol{margin:0;padding-left:25px}
+.toc li{margin:4px 0}
+.legal-section{
+  position:relative;
+  margin:24px 0 0;
+  padding:20px 22px 24px;
+  border:1px solid transparent;
+  border-radius:22px;
+  transform-style:preserve-3d;
+  transition:transform .16s ease-out,background .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.legal-section.is-visible{animation:rise .7s cubic-bezier(.2,.78,.22,1) both}
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,28px,-20px)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+.legal-section:hover{
+  background:linear-gradient(145deg,rgba(17,29,50,.55),rgba(8,14,26,.18));
+  border-color:rgba(143,174,255,.16);
+  box-shadow:0 28px 75px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.025);
+}
+.content h2{
+  margin:0 0 13px;
+  font-size:28px;
+  line-height:1.25;
+  transition:transform .22s ease,text-shadow .22s ease;
+}
+.legal-section:hover h2{
+  transform:translate3d(5px,-2px,14px);
+  text-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+.content h2::after{
+  content:"";
+  display:block;
+  width:0;
+  height:2px;
+  margin-top:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  transition:width .35s ease;
+}
+.legal-section:hover h2::after{width:min(190px,42%)}
+.content h3{font-size:20px;margin:27px 0 8px}
+.content p,.content li{color:#c7d2e3}
+.content ul,.content ol{padding-left:27px}
+.content li{margin:5px 0}
+.definition{
+  margin:15px 0;
+  padding:13px 17px;
+  border-left:3px solid #526ea4;
+  border-radius:0 13px 13px 0;
+  background:rgba(7,13,24,.72);
+  color:#d2dced;
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  overflow:hidden;
+  margin:20px 0 28px;
+  background:rgba(7,13,24,.76);
+  border:1px solid var(--line);
+  border-radius:17px;
+  box-shadow:0 22px 55px rgba(0,0,0,.28);
+}
+th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:#fff;background:#101b30}
+td{color:#c5d1e2}
+tbody tr{transition:transform .18s ease,background .18s ease}
+tbody tr:hover{transform:translateX(5px);background:rgba(29,46,77,.34)}
+.small{font-size:14px;color:var(--muted)}
+#progress{
+  position:fixed;
+  top:0;left:0;
+  width:0;height:3px;
+  z-index:9999;
+  background:linear-gradient(90deg,#6f8fe8,#d9e3ff);
+  box-shadow:0 0 20px rgba(143,174,255,.62);
+}
+#cursorLight{
   position:fixed;
   left:0;top:0;
-  width:300px;height:300px;
-  margin:-150px 0 0 -150px;
+  width:310px;height:310px;
+  margin:-155px 0 0 -155px;
   border-radius:50%;
   pointer-events:none;
   z-index:0;
   opacity:0;
-  background:radial-gradient(circle,rgba(116,148,225,.11),rgba(116,148,225,.03) 30%,transparent 70%);
+  background:radial-gradient(circle,rgba(122,155,231,.11),rgba(122,155,231,.035) 30%,transparent 70%);
 }
-@media (hover:hover) and (pointer:fine){
-  body.home-pointer #home-light{opacity:1}
+body.pointer #cursorLight{opacity:1}
+#backTop{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:48px;height:48px;
+  border:1px solid var(--lineStrong);
+  border-radius:15px;
+  background:rgba(8,15,28,.86);
+  color:#fff;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(12px) scale(.92);
+  transition:opacity .25s ease,visibility .25s ease,transform .25s ease,box-shadow .25s ease;
+  backdrop-filter:blur(14px);
+  z-index:20;
 }
-@media (prefers-reduced-motion:reduce){
-  .card,.mark{transform:none!important}
-  #home-light{display:none}
+#backTop.visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+#backTop:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 18px 38px rgba(0,0,0,.48)}
+#scene{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
 }
-@media(max-width:700px){
-  .card{transform:none!important}
+.orb{
+  position:absolute;
+  width:180px;height:180px;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,rgba(213,226,255,.28),rgba(103,139,216,.10) 35%,transparent 70%);
+  filter:blur(.2px);
+  box-shadow:0 0 100px rgba(79,112,189,.10);
+  animation:float 11s ease-in-out infinite;
 }
+.orb:nth-child(1){left:7%;top:18%;animation-delay:-2s}
+.orb:nth-child(2){right:9%;top:56%;width:230px;height:230px;animation-delay:-6s}
+@keyframes float{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(22px,-30px,0) rotate(8deg)}
+}
+@media(max-width:720px){
+  .hero{padding-top:62px}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:auto;padding:28px}
+  .top{padding-top:42px}
+  .legal-section{padding:15px 12px 19px}
+  .content h2{font-size:24px}
+  th,td{font-size:14px;padding:10px}
+  #backTop{right:14px;bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+  .card,.mark,.legal-section{transform:none!important}
+  #cursorLight,#scene{display:none}
+}
+
+.ack-wrap{
+  display:none;
+  margin:0 auto 70px;
+  padding:28px 30px;
+  border:1px solid var(--lineStrong);
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(17,30,52,.94),rgba(8,14,26,.94));
+  box-shadow:0 30px 80px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06);
+  text-align:left;
+  animation:ackReveal .55s cubic-bezier(.2,.78,.22,1) both;
+}
+.ack-wrap.visible{display:block}
+@keyframes ackReveal{
+  from{opacity:0;transform:translate3d(0,20px,0) scale(.985)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+.ack-title{
+  margin:0 0 8px;
+  font-size:22px;
+  line-height:1.25;
+}
+.ack-copy{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:14px;
+}
+.ack-links{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:19px;
+}
+.ack-links a{
+  padding:7px 11px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:rgba(8,15,28,.62);
+  font-size:13px;
+  font-weight:750;
+}
+.ack-label{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  cursor:pointer;
+  color:#e8efff;
+  font-weight:750;
+}
+.ack-label input{
+  width:20px;
+  height:20px;
+  margin:2px 0 0;
+  flex:0 0 auto;
+  accent-color:#8faeff;
+  cursor:pointer;
+}
+.ack-label span{flex:1}
+.ack-submit{
+  margin-top:20px;
+  display:none;
+  border:1px solid rgba(143,174,255,.38);
+  border-radius:13px;
+  padding:11px 16px;
+  background:linear-gradient(145deg,#172747,#0b1528);
+  color:#fff;
+  font-weight:850;
+  cursor:pointer;
+  box-shadow:0 14px 35px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.ack-submit.visible{display:inline-flex}
+.ack-status{
+  margin-top:13px;
+  color:#aab7cc;
+  font-size:13px;
+}
+.ack-status.success{color:#dce7ff}
+@media(max-width:720px){
+  .ack-wrap{padding:23px 20px}
+}
+
 </style>
-</head><body>
-<header class="hero wrap"><div class="mark">⚓</div><div class="eyebrow">Apex Syndicate of Malaysia</div><h1>ASM Tournament Bot</h1><p>Official legal and data-use information for the Discord application supporting tournament operations, match workflows, scheduling, attendance, staff administration and server utilities.</p></header>
-<main class="wrap"><section class="cards">
-<article class="card" tabindex="0"><div class="icon">📜</div><h2>Terms of Service</h2><p>Rules, responsibilities, prohibited conduct, service limitations, administrative controls, intellectual-property terms and termination provisions for use of the bot.</p><a class="button" href="terms.html">Read Terms →</a></article>
-<article class="card" tabindex="0"><div class="icon">🔒</div><h2>Privacy Policy</h2><p>Detailed information about Discord data, tournament records, storage, integrations, retention, deletion requests, security and user rights.</p><a class="button" href="privacy.html">Read Privacy Policy →</a></article>
-</section></main><footer class="footer"><div class="wrap">© 2026 Apex Syndicate of Malaysia. All rights reserved. · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></div></footer>
+</head>
+<body>
+<header class="hero wrap">
+  <div class="mark" aria-hidden="true">⚓</div>
+  <div class="eyebrow">Apex Syndicate of Malaysia™</div>
+  <h1>Apex Vanguard™</h1>
+  <p>Official legal information for the Discord application that supports tournament operations, match workflows, scheduling, attendance, staff administration, tickets, results and server utilities.</p>
+</header>
+<main class="wrap">
+  <section class="cards" aria-label="Legal documents">
+    <article class="card" tabindex="0">
+      <div class="icon">📜</div>
+      <h2>Terms of Use</h2>
+      <p>Rules governing authorization, acceptable use, tournament integrity, administrative controls, intellectual property, availability, suspension, disclaimers and legal responsibilities.</p>
+      <a class="button" href="terms.html">Read Terms <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="card" tabindex="0">
+      <div class="icon">🔒</div>
+      <h2>Global Privacy Policy</h2>
+      <p>Information about Discord data, tournament records, storage, integrations, retention, security, data requests and the privacy practices of Apex Vanguard™.</p>
+      <a class="button" href="privacy.html">Read Privacy Policy <span aria-hidden="true">→</span></a>
+    </article>
+  </section>
+</main>
+
+<section class="ack-wrap" id="legalAcknowledgement" aria-labelledby="ackTitle">
+  <h2 class="ack-title" id="ackTitle">Legal Documents Acknowledgement</h2>
+  <p class="ack-copy">
+    This acknowledgement becomes available only after both legal documents have been opened
+    and the reading state has been verified. The browser stores the state in an encrypted, integrity checked record.
+  </p>
+  <div class="ack-links">
+    <a href="terms.html" target="_blank" rel="noopener">Open Terms of Use ↗</a>
+    <a href="privacy.html" target="_blank" rel="noopener">Open Privacy Policy ↗</a>
+  </div>
+  <label class="ack-label" for="legalReadCheckbox">
+    <input id="legalReadCheckbox" type="checkbox">
+    <span>I confirm that I have read and understood the Apex Vanguard™ Terms of Use and Global Privacy Policy.</span>
+  </label>
+  <button class="ack-submit" id="ackSubmit" type="button">Confirm Acknowledgement</button>
+  <div class="ack-status" id="ackStatus" role="status" aria-live="polite"></div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">© 2026 Apex Syndicate of Malaysia™. All rights reserved. · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></div>
+</footer>
+<script>
+(() => {
+  "use strict";
+
+  /*
+   * Apex Vanguard™ legal reading-state storage.
+   *
+   * IMPORTANT:
+   * This is a static GitHub Pages implementation. The encrypted blob prevents
+   * casual plaintext editing of localStorage and detects tampering with the blob,
+   * but a browser cannot keep a cryptographic key secret when the key is shipped
+   * in public JavaScript. True tamper-resistant legal acceptance requires a
+   * server-side authenticated consent service.
+   */
+
+  const STORAGE_KEY = "av_legal_state_v2";
+  const KEY_MATERIAL = "Apex-Vanguard-Legal-State-v2-9f2c7d31";
+  const VERSION = 2;
+
+  const textEncoder = new TextEncoder();
+  const textDecoder = new TextDecoder();
+
+  const bytesToBase64 = bytes =>
+    btoa(String.fromCharCode(...new Uint8Array(bytes)));
+
+  const base64ToBytes = value =>
+    Uint8Array.from(atob(value), c => c.charCodeAt(0));
+
+  async function deriveKey() {
+    const material = await crypto.subtle.importKey(
+      "raw",
+      textEncoder.encode(KEY_MATERIAL),
+      "PBKDF2",
+      false,
+      ["deriveKey"]
+    );
+
+    return crypto.subtle.deriveKey(
+      {
+        name: "PBKDF2",
+        salt: textEncoder.encode("ApexVanguard-Legal-State-Salt-v2"),
+        iterations: 120000,
+        hash: "SHA-256"
+      },
+      material,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["encrypt", "decrypt"]
+    );
+  }
+
+  async function saveState(state) {
+    const key = await deriveKey();
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const payload = JSON.stringify({
+      version: VERSION,
+      ...state
+    });
+
+    const encrypted = await crypto.subtle.encrypt(
+      { name: "AES-GCM", iv },
+      key,
+      textEncoder.encode(payload)
+    );
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      version: VERSION,
+      iv: bytesToBase64(iv),
+      data: bytesToBase64(encrypted)
+    }));
+  }
+
+  async function loadState() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+
+    try {
+      const envelope = JSON.parse(raw);
+
+      if (
+        envelope.version !== VERSION ||
+        typeof envelope.iv !== "string" ||
+        typeof envelope.data !== "string"
+      ) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+
+      const key = await deriveKey();
+
+      const decrypted = await crypto.subtle.decrypt(
+        {
+          name: "AES-GCM",
+          iv: base64ToBytes(envelope.iv)
+        },
+        key,
+        base64ToBytes(envelope.data)
+      );
+
+      const state = JSON.parse(textDecoder.decode(decrypted));
+
+      if (!state || state.version !== VERSION) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+
+      return state;
+    } catch {
+      // Modified, corrupted or incompatible storage is rejected.
+      localStorage.removeItem(STORAGE_KEY);
+      return null;
+    }
+  }
+
+  window.ApexVanguardLegalState = Object.freeze({
+    save: saveState,
+    load: loadState
+  });
+})();
+</script>
 
 <script>
 (() => {
   "use strict";
-  if (window.__asmHome3DInitialized) return;
-  window.__asmHome3DInitialized = true;
+  if (window.__avLegalSite) return;
+  window.__avLegalSite = true;
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const body = document.body;
+  const finePointer = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
   const root = document.documentElement;
+  const body = document.body;
+
+  const scene = document.createElement("div");
+  scene.id = "scene";
+  scene.setAttribute("aria-hidden","true");
+  scene.innerHTML = '<div class="orb"></div><div class="orb"></div>';
+  body.appendChild(scene);
 
   const light = document.createElement("div");
-  light.id = "home-light";
+  light.id = "cursorLight";
   light.setAttribute("aria-hidden","true");
   body.appendChild(light);
 
-  const cards = Array.from(document.querySelectorAll(".card"));
-  const mark = document.querySelector(".mark");
+  const progress = document.createElement("div");
+  progress.id = "progress";
+  progress.setAttribute("aria-hidden","true");
+  body.prepend(progress);
 
-  if (!reduced && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
-    cards.forEach(card => {
+  const top = document.createElement("button");
+  top.id = "backTop";
+  top.type = "button";
+  top.setAttribute("aria-label","Back to top");
+  top.textContent = "↑";
+  body.appendChild(top);
+
+  const update = () => {
+    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    progress.style.width = Math.min(100, Math.max(0, scrollY / max * 100)) + "%";
+    top.classList.toggle("visible", scrollY > 520);
+  };
+  update();
+  addEventListener("scroll", update, {passive:true});
+  top.addEventListener("click", () => scrollTo({top:0,behavior:reduced ? "auto" : "smooth"}));
+
+  const main = document.querySelector(".content");
+  if (main) {
+    const headings = [...main.querySelectorAll("h2")];
+    headings.forEach((heading) => {
+      const section = document.createElement("section");
+      section.className = "legal-section";
+      main.insertBefore(section, heading);
+      let node = heading;
+      while (node) {
+        const next = node.nextSibling;
+        section.appendChild(node);
+        if (!next || (next.nodeType === 1 && next.matches("h2"))) break;
+        node = next;
+      }
+    });
+  }
+
+  const sections = [...document.querySelectorAll(".legal-section")];
+  if (!reduced && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.06,rootMargin:"0px 0px -8% 0px"});
+    sections.forEach(s => observer.observe(s));
+  } else {
+    sections.forEach(s => s.classList.add("is-visible"));
+  }
+
+  if (!reduced && finePointer) {
+    document.querySelectorAll(".card").forEach(card => {
       card.addEventListener("pointermove", event => {
         const r = card.getBoundingClientRect();
-        const x = (event.clientX-r.left)/Math.max(1,r.width);
-        const y = (event.clientY-r.top)/Math.max(1,r.height);
-        const ry = ((x-.5)*8).toFixed(2);
-        const rx = ((.5-y)*6).toFixed(2);
+        const x = (event.clientX-r.left) / Math.max(1,r.width);
+        const y = (event.clientY-r.top) / Math.max(1,r.height);
+        const ry = ((x-.5)*7).toFixed(2);
+        const rx = ((.5-y)*5).toFixed(2);
         card.style.setProperty("--rx",rx+"deg");
         card.style.setProperty("--ry",ry+"deg");
-        card.style.setProperty("--cx",(x*100).toFixed(1)+"%");
-        card.style.setProperty("--cy",(y*100).toFixed(1)+"%");
-        card.style.transform =
-          `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-8px,22px)`;
+        card.style.setProperty("--cx",(x*100)+"%");
+        card.style.setProperty("--cy",(y*100)+"%");
+        card.style.transform = `perspective(1400px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-8px,20px)`;
       });
-      card.addEventListener("pointerleave",() => {
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
         card.style.removeProperty("--rx");
         card.style.removeProperty("--ry");
-        card.style.removeProperty("--cx");
-        card.style.removeProperty("--cy");
-        card.style.transform="";
       });
     });
 
+    const mark = document.querySelector(".mark");
     if (mark) {
       mark.addEventListener("pointermove", event => {
         const r=mark.getBoundingClientRect();
         const x=(event.clientX-r.left)/Math.max(1,r.width);
         const y=(event.clientY-r.top)/Math.max(1,r.height);
-        const ry=((x-.5)*12).toFixed(2);
-        const rx=((.5-y)*10).toFixed(2);
-        mark.style.transform=`perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(16px) scale(1.06)`;
+        mark.style.transform=`perspective(700px) rotateX(${((.5-y)*10).toFixed(2)}deg) rotateY(${((x-.5)*12).toFixed(2)}deg) translateZ(18px) scale(1.05)`;
       });
-      mark.addEventListener("pointerleave",()=>{mark.style.transform=""});
+      mark.addEventListener("pointerleave",()=>mark.style.transform="");
     }
 
-    body.addEventListener("pointermove",event=>{
-      body.classList.add("home-pointer");
+    sections.forEach(section => {
+      section.addEventListener("pointermove", event => {
+        const r=section.getBoundingClientRect();
+        const x=(event.clientX-r.left)/Math.max(1,r.width);
+        const y=(event.clientY-r.top)/Math.max(1,r.height);
+        const ry=((x-.5)*2.6).toFixed(2);
+        const rx=((.5-y)*1.8).toFixed(2);
+        section.style.transform=`perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translate3d(0,-4px,10px)`;
+      });
+      section.addEventListener("pointerleave",()=>section.style.transform="");
+    });
+
+    body.addEventListener("pointermove", event => {
+      body.classList.add("pointer");
       root.style.setProperty("--mx",event.clientX+"px");
       root.style.setProperty("--my",event.clientY+"px");
       light.style.transform=`translate3d(${event.clientX}px,${event.clientY}px,0)`;
-    },{passive:true});
-    body.addEventListener("pointerleave",()=>body.classList.remove("home-pointer"));
+    }, {passive:true});
   }
 
-  if (!reduced && "IntersectionObserver" in window) {
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.animate(
-            [{opacity:0,transform:"perspective(1200px) translateY(28px) scale(.97)"},
-             {opacity:1,transform:"perspective(1200px) translateY(0) scale(1)"}],
-            {duration:650,easing:"cubic-bezier(.2,.75,.25,1)",fill:"forwards"}
-          );
-          observer.unobserve(entry.target);
-        }
-      });
-    },{threshold:.1});
-    cards.forEach(card=>observer.observe(card));
-  }
+  // Legal acknowledgement.
+  // The acknowledgement panel is revealed only when both legal pages have
+  // recorded a completed reading state in the encrypted local storage envelope.
+  const ack = document.getElementById("legalAcknowledgement");
+  const checkbox = document.getElementById("legalReadCheckbox");
+  const confirmButton = document.getElementById("ackSubmit");
+  const status = document.getElementById("ackStatus");
+
+  const loadLegalState = async () => {
+    if (!window.ApexVanguardLegalState) return null;
+    return window.ApexVanguardLegalState.load();
+  };
+
+  const hasValidRead = state => Boolean(
+    state &&
+    state.terms &&
+    state.terms.read === true &&
+    state.privacy &&
+    state.privacy.read === true
+  );
+
+  const initializeAcknowledgement = async () => {
+    const state = await loadLegalState();
+
+    if (!hasValidRead(state)) {
+      ack.classList.remove("visible");
+      return;
+    }
+
+    ack.classList.add("visible");
+
+    if (state.acknowledged === true) {
+      checkbox.checked = true;
+      checkbox.disabled = true;
+      confirmButton.classList.add("visible");
+      confirmButton.disabled = true;
+      confirmButton.textContent = "Acknowledged ✓";
+      status.textContent = "Acknowledgement recorded on this device.";
+      status.classList.add("success");
+    }
+  };
+
+  checkbox?.addEventListener("change", () => {
+    confirmButton.classList.toggle("visible", checkbox.checked);
+    status.textContent = checkbox.checked
+      ? "Ready to confirm your acknowledgement."
+      : "";
+    status.classList.toggle("success", false);
+  });
+
+  confirmButton?.addEventListener("click", async () => {
+    if (!checkbox.checked) return;
+
+    const state = await loadLegalState();
+
+    if (!hasValidRead(state)) {
+      checkbox.checked = false;
+      confirmButton.classList.remove("visible");
+      status.textContent =
+        "Both legal documents must be completed before acknowledgement.";
+      return;
+    }
+
+    state.acknowledged = true;
+    state.acknowledgedAt = new Date().toISOString();
+
+    try {
+      await window.ApexVanguardLegalState.save(state);
+
+      status.textContent = "Acknowledgement recorded on this device.";
+      status.classList.add("success");
+      checkbox.disabled = true;
+      confirmButton.disabled = true;
+      confirmButton.textContent = "Acknowledged ✓";
+    } catch {
+      status.textContent =
+        "Your browser could not securely store the acknowledgement.";
+    }
+  });
+
+  initializeAcknowledgement();
+
+
 })();
 </script>
-</body></html>
+</body>
+</html>
